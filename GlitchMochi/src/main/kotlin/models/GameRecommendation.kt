@@ -1,14 +1,11 @@
 package models
-
 import ENUMs.GENRE
-import com.sun.jdi.connect.Connector
-import com.sun.org.apache.xml.internal.utils.res.StringArrayWrapper
 import org.joda.time.DateTime
 
 data class GameRecommendation(
     val userID        : Int,
-    val score         : Float,
-    val image         : StringArrayWrapper,
+    val score         : Double,
+    val image         : String,
     val game          : String,
     val genre         : GENRE,
     val title         : String,

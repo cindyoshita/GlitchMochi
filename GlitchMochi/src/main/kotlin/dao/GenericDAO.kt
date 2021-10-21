@@ -1,10 +1,10 @@
 package dao
 
-interface GenericDAO
-    fun pegarUm (id:Int): Any;
-    fun pegarTodos(): List<Any>;
-    fun inserirUm(objeto:Any) : Unit;
-    fun inserirVarios (lista : List<Any>) : Unit;
-    fun atualizar (objeto : Any) : Unit;
-    fun deletar (id : Int) : Unit;
+interface GenericDAO{
+    fun getOne (id:Int): Any;
+    fun getAll(): List<Any>;
+    fun insertOne(objeto:Any) : Unit;
+    fun insertAll (lista : List<Any>) : Unit;
+    fun update (objeto : Any) : Unit;
+    fun delete (id : Int) : Unit;
 }

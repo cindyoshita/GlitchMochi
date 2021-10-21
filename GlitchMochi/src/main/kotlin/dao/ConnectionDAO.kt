@@ -1,5 +1,8 @@
 package dao
 
+import shared.SharedPaths
+import java.sql.*
+
 class ConnectionDAO {
 
     val connection : Connection
