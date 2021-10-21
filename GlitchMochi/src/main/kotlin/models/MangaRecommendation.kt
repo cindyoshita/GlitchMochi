@@ -1,7 +1,7 @@
 package models
 
 import ENUMs.GENRE
-import org.joda.time.DateTime
+import java.util.*
 
 data class MangaRecommendation(
     val userID        : Int,
@@ -10,7 +10,7 @@ data class MangaRecommendation(
     val author        : String,
     val genre         : GENRE,
     val title         : String,
-    val postDate      : DateTime,
+    val postDate      : Date,
     val text          : String,
     val publicationID : Int,
     val manga         : String,

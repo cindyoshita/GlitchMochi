@@ -1,6 +1,6 @@
 package models
 import ENUMs.GENRE
-import org.joda.time.DateTime
+import java.util.*
 
 data class GameRecommendation(
     val userID        : Int,
@@ -11,7 +11,7 @@ data class GameRecommendation(
     val title         : String,
     val gameLenght    : Int,
     val gameStudio    : String,
-    val postDate      : DateTime,
+    val postDate      : Date,
     val text          : String,
     val publicationID : Int,
     val comment       : Comments
