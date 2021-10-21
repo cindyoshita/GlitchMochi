@@ -18,7 +18,7 @@ class CommentDAO : GenericDAO {
             comment = Comments(
                 resultSet.getString(("owner")),
                 resultSet.getString("text"),
-                resultSet.getInt("like"),
+                resultSet.getInt("likes"),
                 resultSet.getInt("commentID")
             )
 
@@ -44,7 +44,7 @@ class CommentDAO : GenericDAO {
                     Comments(
                         resultSet.getString(("owner")),
                         resultSet.getString("text"),
-                        resultSet.getInt("like"),
+                        resultSet.getInt("likes"),
                         resultSet.getInt("commentID")
                     )
                 )
@@ -63,13 +63,13 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO Comment  
-            (owner,text,like)
+            (owner,text,likes)
             VALUES (?,?,?);
             """.trimMargin())
         val comment = objeto as Comments
         preparedStatement?.setString(1, comment.owner)
         preparedStatement?.setString(2, comment.text)
-        preparedStatement?.setInt(3, comment.like)
+        preparedStatement?.setInt(3, comment.likes)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -80,14 +80,14 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO Comment  
-            (owner,text,like)
+            (owner,text,likes)
             VALUES (?,?,?);
             """.trimMargin())
         for (objeto in lista) {
             val comment = objeto as Comments
             preparedStatement?.setString(1, comment.owner)
             preparedStatement?.setString(2, comment.text)
-            preparedStatement?.setInt(3, comment.like)
+            preparedStatement?.setInt(3, comment.likes)
             preparedStatement?.executeUpdate()
             // Banco ja esta em auto commit
             //connectiondao.commit()
@@ -99,13 +99,13 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             UPDATE Comment  
-            SET owner = ?, text = ?, like = ?
+            SET owner = ?, text = ?, likes = ?
             WHERE commentID = ?;
             """.trimMargin())
         val comment = objeto as Comments
         preparedStatement?.setString(1, comment.owner)
         preparedStatement?.setString(2, comment.text)
-        preparedStatement?.setInt(3, comment.like)
+        preparedStatement?.setInt(3, comment.likes)
         preparedStatement?.setInt(4, comment.commentID)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit

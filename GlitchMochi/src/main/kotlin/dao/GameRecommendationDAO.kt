@@ -22,7 +22,7 @@ class GameRecommendationDAO : GenericDAO {
                 resultSet.getDouble("score"),
                 resultSet.getString("image"),
                 resultSet.getString("game"),
-                resultSet.getObject("genre",),
+                GENRE.valueOf(resultSet.getString("genre")),
                 resultSet.getString("title"),
                 resultSet.getInt(("gameLenght")),
                 resultSet.getString("gameStudio"),
@@ -80,9 +80,9 @@ class GameRecommendationDAO : GenericDAO {
     override fun insertOne(objeto: Any) {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
-            INSERT INTO GameRecommendation  
+            INSERT INTO GameRecommendation
             (userID,score,image,game, genre, title, gameLenght,gameStudio,postDate,text,comment)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?); INSERT INTO Comment  
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?); INSERT INTO Comment
             (owner,text,like)
             VALUES (?,?,?);
             """.trimMargin())
@@ -107,7 +107,7 @@ class GameRecommendationDAO : GenericDAO {
     override fun insertAll(lista: List<Any>) {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
-            INSERT INTO GameRecommendation  
+            INSERT INTO GameRecommendation
             (userID,score,image,game, genre, title, gameLenght,gameStudio,postDate,text,comment)
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?);
             """.trimMargin())
@@ -134,7 +134,7 @@ class GameRecommendationDAO : GenericDAO {
     override fun update(objeto: Any) {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
-            UPDATE GameRecommendation  
+            UPDATE GameRecommendation
             SET userID = ?, score = ?, image = ?, game = ?, genre = ?, title = ?, gameLenght = ?, gameStudio = ?, postDate = ?, text = ?, comment = ?
             WHERE publicationID = ?;
             """.trimMargin())
