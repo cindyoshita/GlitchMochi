@@ -56,7 +56,7 @@ class GameRecommendationDAO : GenericDAO {
                         resultSet.getDouble("score"),
                         resultSet.getString("image"),
                         resultSet.getString("game"),
-                        resultSet.getObject("genre"),
+                        GENRE.valueOf(resultSet.getString("genre")),
                         resultSet.getString("title"),
                         resultSet.getInt("gameLenght"),
                         resultSet.getString("gameStudio"),
@@ -95,7 +95,7 @@ class GameRecommendationDAO : GenericDAO {
         preparedStatement?.setString(5, gamerecommendation.genre)
         preparedStatement?.setString(6, gamerecommendation.title)
         preparedStatement?.setInt(6, gamerecommendation.gameLenght)
-        preparedStatement?.setInt(7, gamerecommendation.postDate)
+        preparedStatement?.setDate(7, gamerecommendation.postDate)
         preparedStatement?.setString(8, gamerecommendation.text)
         preparedStatement?.setString(10, gamerecommendation.comment)
         preparedStatement?.executeUpdate()

@@ -1,7 +1,7 @@
 package models
 
 import ENUMs.GENRE
-import java.util.*
+import java.sql.Date
 
 data class MangaRecommendation(
     val userID        : Int,
