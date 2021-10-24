@@ -15,6 +15,6 @@ data class GameRecommendation(
     val postDate      : Date,
     val text          : String,
     val publicationID : Int,
-    val comment       : Comments
+    val comment       : Any
 
 )

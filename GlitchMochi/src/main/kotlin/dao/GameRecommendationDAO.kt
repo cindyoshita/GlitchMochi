@@ -1,6 +1,8 @@
 package dao
 
 import ENUMs.GENRE
+import ENUMs.TYPE
+import io.ktor.util.*
 import models.Comments
 import models.GameRecommendation
 import shared.SharedPaths
@@ -16,6 +18,7 @@ class GameRecommendationDAO : GenericDAO {
         val resultSet = sqlStatement.executeQuery("SELECT * FROM GameRecommendation WHERE id == ${id};")
         // Intera pelo resultado obtido
         var gameRecommendation : GameRecommendation? = null
+        var comments : Comments? = null
         while(resultSet.next()){
             gameRecommendation = GameRecommendation(
                 resultSet.getInt("userID"),
@@ -29,8 +32,11 @@ class GameRecommendationDAO : GenericDAO {
                 resultSet.getDate("postDate"),
                 resultSet.getString("text"),
                 resultSet.getInt("publicationID"),
-                resultSet.getObject("comment",Comments)
-            )
+                if(comments?.type == TYPE.GAME)
+                    resultSet.getObject("commentID")
+                else
+                    println("error")
+                )
 
             println("GameRecommendation encontrados: ${gameRecommendation}")
         }
@@ -63,9 +69,10 @@ class GameRecommendationDAO : GenericDAO {
                         resultSet.getDate("postDate"),
                         resultSet.getString("text"),
                         resultSet.getInt("publicationID"),
-                        resultSet.getObject("comment",Comments)
+                        resultSet.getObject("comment")
+                        )
                     )
-                )
+
             }
         } catch (exception: Exception) {
             exception.printStackTrace()
@@ -92,12 +99,12 @@ class GameRecommendationDAO : GenericDAO {
         preparedStatement?.setDouble(2, gamerecommendation.score)
         preparedStatement?.setString(3, gamerecommendation.image)
         preparedStatement?.setString(4, gamerecommendation.game)
-        preparedStatement?.setString(5, gamerecommendation.genre)
+        preparedStatement?.setInt(5, gamerecommendation.genre.ordinal)
         preparedStatement?.setString(6, gamerecommendation.title)
         preparedStatement?.setInt(6, gamerecommendation.gameLenght)
         preparedStatement?.setDate(7, gamerecommendation.postDate)
         preparedStatement?.setString(8, gamerecommendation.text)
-        preparedStatement?.setString(10, gamerecommendation.comment)
+        preparedStatement?.setObject(10, gamerecommendation.comment)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -117,12 +124,12 @@ class GameRecommendationDAO : GenericDAO {
             preparedStatement?.setDouble(2, gamerecommendation.score)
             preparedStatement?.setString(3, gamerecommendation.image)
             preparedStatement?.setString(4, gamerecommendation.game)
-            preparedStatement?.setString(5, gamerecommendation.genre)
+            preparedStatement?.setInt(5, gamerecommendation.genre.ordinal)
             preparedStatement?.setString(6, gamerecommendation.title)
             preparedStatement?.setInt(6, gamerecommendation.gameLenght)
-            preparedStatement?.setInt(7, gamerecommendation.postDate)
+            preparedStatement?.setDate(7, gamerecommendation.postDate)
             preparedStatement?.setString(8, gamerecommendation.text)
-            preparedStatement?.setString(10, gamerecommendation.comment)
+            preparedStatement?.setObject(10, gamerecommendation.comment)
 
             preparedStatement?.executeUpdate()
             // Banco ja esta em auto commit
@@ -143,13 +150,13 @@ class GameRecommendationDAO : GenericDAO {
         preparedStatement?.setDouble(2, gamerecommendation.score)
         preparedStatement?.setString(3, gamerecommendation.image)
         preparedStatement?.setString(4, gamerecommendation.game)
-        preparedStatement?.setString(5, gamerecommendation.genre)
+        preparedStatement?.setInt(5, gamerecommendation.genre.ordinal)
         preparedStatement?.setString(6, gamerecommendation.title)
         preparedStatement?.setInt(6, gamerecommendation.gameLenght)
-        preparedStatement?.setInt(7, gamerecommendation.postDate)
+        preparedStatement?.setDate(7, gamerecommendation.postDate)
         preparedStatement?.setString(8, gamerecommendation.text)
         preparedStatement?.setInt(9, gamerecommendation.publicationID)
-        preparedStatement?.setString(10, gamerecommendation.comment)
+        preparedStatement?.setObject(10, gamerecommendation.comment)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()

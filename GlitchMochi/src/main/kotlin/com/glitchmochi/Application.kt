@@ -1,5 +1,6 @@
 package com.glitchmochi
 
+import ENUMs.TYPE
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import dao.CommentDAO
@@ -10,7 +11,7 @@ import models.Comments
 
 fun main() {
     val commentDAO = CommentDAO()
-    commentDAO.update(Comments("Hyundai","123",2,3))
+    commentDAO.update(Comments("Hyundai", "123", 2, 3, TYPE.MANGA))
     var comments = commentDAO.getAll();
     embeddedServer(Netty, port = 80, host = "0.0.0.0") {
         routing{
