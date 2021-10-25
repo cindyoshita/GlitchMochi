@@ -9,7 +9,7 @@ import models.Comments
 fun main(args: Array<String>) {
     // Criar um DAO para os produtos
     val commentsDAO = CommentDAO()
-    commentsDAO.update(Comments("usuario", "qwqe", 666, 11, TYPE.GAME))
+    commentsDAO.update(Comments("usuario", "qwqe", 666, 1, TYPE.GAME))
     var comments = commentsDAO.getAll()
     //Intera pelo resultado obtido
     for (comment in comments){
