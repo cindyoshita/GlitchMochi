@@ -21,7 +21,8 @@ class CommentDAO : GenericDAO {
                 resultSet.getString("text"),
                 resultSet.getInt("likes"),
                 resultSet.getInt("commentID"),
-                TYPE.valueOf(resultSet.getString("types")),
+                resultSet.getInt("gameRecommendationID"),
+                resultSet.getInt("mangaRecommendationID")
             )
 
             println("Comentarios encontrados: ${comment}")
@@ -48,7 +49,8 @@ class CommentDAO : GenericDAO {
                         resultSet.getString("text"),
                         resultSet.getInt("likes"),
                         resultSet.getInt("commentID"),
-                        TYPE.valueOf(resultSet.getString("types")),
+                        resultSet.getInt("gameRecommendationID"),
+                        resultSet.getInt("mangaRecommendationID")
                     )
                 )
             }
@@ -66,14 +68,15 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO Comment  
-            (owner,text,likes,types)
-            VALUES (?,?,?,?);
+            (owner,text,likes,gameRecommendationID,mangaRecommendationID)
+            VALUES (?,?,?,?,?);
             """.trimMargin())
         val comment = objeto as Comments
         preparedStatement?.setString(1, comment.owner)
         preparedStatement?.setString(2, comment.text)
         preparedStatement?.setInt(3, comment.likes)
-        preparedStatement?.setInt(4, comment.type.ordinal)
+        preparedStatement?.setInt(4, comment.gameRecommendationID)
+        preparedStatement?.setInt(5, comment.mangaRecommendationID)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -84,15 +87,16 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO Comment  
-            (owner,text,likes,types)
-            VALUES (?,?,?,?);
+            (owner,text,likes,gameRecommendationID,mangaRecommendationID)
+            VALUES (?,?,?,?,?);
             """.trimMargin())
         for (objeto in lista) {
             val comment = objeto as Comments
             preparedStatement?.setString(1, comment.owner)
             preparedStatement?.setString(2, comment.text)
             preparedStatement?.setInt(3, comment.likes)
-            preparedStatement?.setInt(4, comment.type.ordinal)
+            preparedStatement?.setInt(4, comment.gameRecommendationID)
+            preparedStatement?.setInt(5, comment.mangaRecommendationID)
             preparedStatement?.executeUpdate()
             // Banco ja esta em auto commit
             //connectiondao.commit()
@@ -104,15 +108,16 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             UPDATE Comment  
-            SET owner = ?, text = ?, likes = ?, types = ?
+            SET owner = ?, text = ?, likes = ?, gameRecommendationID = ?, mangaRecommendationID = ?
             WHERE commentID = ?;
             """.trimMargin())
         val comment = objeto as Comments
         preparedStatement?.setString(1, comment.owner)
         preparedStatement?.setString(2, comment.text)
         preparedStatement?.setInt(3, comment.likes)
-        preparedStatement?.setInt(4, comment.type.ordinal)
-        preparedStatement?.setInt(5, comment.commentID)
+        preparedStatement?.setInt(4, comment.commentID)
+        preparedStatement?.setInt(5, comment.gameRecommendationID)
+        preparedStatement?.setInt(6, comment.mangaRecommendationID)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()

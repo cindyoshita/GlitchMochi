@@ -13,6 +13,5 @@ data class MangaRecommendation(
     val postDate      : Date,
     val text          : String,
     val mangaRecommendationID : Int,
-    val manga         : String,
-    val comment       : Comments
+    val manga         : String
 )

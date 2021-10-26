@@ -31,9 +31,10 @@ class GameRecommendationDAO : GenericDAO {
                 resultSet.getString("gameStudio"),
                 resultSet.getDate("postDate"),
                 resultSet.getString("text"),
-                resultSet.getInt("publicationID"),
+                resultSet.getInt("gameRecommendationID"),
 
 
+        )
             println("GameRecommendation encontrados: ${gameRecommendation}")
         }
         resultSet.close()
@@ -64,8 +65,7 @@ class GameRecommendationDAO : GenericDAO {
                         resultSet.getString("gameStudio"),
                         resultSet.getDate("postDate"),
                         resultSet.getString("text"),
-                        resultSet.getInt("publicationID"),
-                        resultSet.getObject("comment")
+                        resultSet.getInt("gameRecommendationID"),
                         )
                     )
 
@@ -84,10 +84,8 @@ class GameRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO GameRecommendation
-            (userID,score,image,game, genre, title, gameLenght,gameStudio,postDate,text,comment)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?); INSERT INTO Comment
-            (owner,text,like)
-            VALUES (?,?,?);
+            (userID,score,image,game, genre, title, gameLenght,gameStudio,postDate,text,gameRecommendationID)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?);
             """.trimMargin())
         val comment = objeto as Comments
         val gamerecommendation = objeto as GameRecommendation
@@ -97,10 +95,11 @@ class GameRecommendationDAO : GenericDAO {
         preparedStatement?.setString(4, gamerecommendation.game)
         preparedStatement?.setInt(5, gamerecommendation.genre.ordinal)
         preparedStatement?.setString(6, gamerecommendation.title)
-        preparedStatement?.setInt(6, gamerecommendation.gameLenght)
-        preparedStatement?.setDate(7, gamerecommendation.postDate)
-        preparedStatement?.setString(8, gamerecommendation.text)
-        preparedStatement?.setObject(10, gamerecommendation.comment)
+        preparedStatement?.setInt(7, gamerecommendation.gameLenght)
+        preparedStatement?.setString(8, gamerecommendation.gameStudio)
+        preparedStatement?.setDate(9, gamerecommendation.postDate)
+        preparedStatement?.setString(10, gamerecommendation.text)
+        preparedStatement?.setInt(11, gamerecommendation.gameRecommendationID)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -111,8 +110,8 @@ class GameRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO GameRecommendation
-            (userID,score,image,game, genre, title, gameLenght,gameStudio,postDate,text,comment)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?,?);
+            (userID,score,image,game, genre, title, gameLenght,gameStudio,postDate,text,gameRecommendationID)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?);
             """.trimMargin())
         for (objeto in lista) {
             val gamerecommendation = objeto as GameRecommendation
@@ -122,10 +121,11 @@ class GameRecommendationDAO : GenericDAO {
             preparedStatement?.setString(4, gamerecommendation.game)
             preparedStatement?.setInt(5, gamerecommendation.genre.ordinal)
             preparedStatement?.setString(6, gamerecommendation.title)
-            preparedStatement?.setInt(6, gamerecommendation.gameLenght)
-            preparedStatement?.setDate(7, gamerecommendation.postDate)
-            preparedStatement?.setString(8, gamerecommendation.text)
-            preparedStatement?.setObject(10, gamerecommendation.comment)
+            preparedStatement?.setInt(7, gamerecommendation.gameLenght)
+            preparedStatement?.setString(8, gamerecommendation.gameStudio)
+            preparedStatement?.setDate(9, gamerecommendation.postDate)
+            preparedStatement?.setString(10, gamerecommendation.text)
+            preparedStatement?.setInt(11, gamerecommendation.gameRecommendationID)
 
             preparedStatement?.executeUpdate()
             // Banco ja esta em auto commit
@@ -138,8 +138,8 @@ class GameRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             UPDATE GameRecommendation
-            SET userID = ?, score = ?, image = ?, game = ?, genre = ?, title = ?, gameLenght = ?, gameStudio = ?, postDate = ?, text = ?, comment = ?
-            WHERE publicationID = ?;
+            SET userID = ?, score = ?, image = ?, game = ?, genre = ?, title = ?, gameLenght = ?, gameStudio = ?, postDate = ?, text = ?
+            WHERE gameRecommendationID = ?;
             """.trimMargin())
         val gamerecommendation = objeto as GameRecommendation
         preparedStatement?.setInt(1, gamerecommendation.userID)
@@ -148,11 +148,11 @@ class GameRecommendationDAO : GenericDAO {
         preparedStatement?.setString(4, gamerecommendation.game)
         preparedStatement?.setInt(5, gamerecommendation.genre.ordinal)
         preparedStatement?.setString(6, gamerecommendation.title)
-        preparedStatement?.setInt(6, gamerecommendation.gameLenght)
-        preparedStatement?.setDate(7, gamerecommendation.postDate)
-        preparedStatement?.setString(8, gamerecommendation.text)
-        preparedStatement?.setInt(9, gamerecommendation.publicationID)
-        preparedStatement?.setObject(10, gamerecommendation.comment)
+        preparedStatement?.setInt(7, gamerecommendation.gameLenght)
+        preparedStatement?.setString(8, gamerecommendation.gameStudio)
+        preparedStatement?.setDate(9, gamerecommendation.postDate)
+        preparedStatement?.setString(10, gamerecommendation.text)
+        preparedStatement?.setInt(11, gamerecommendation.gameRecommendationID)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -163,7 +163,7 @@ class GameRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             DELETE FROM GameRecommendation
-            WHERE publicationID = ?;
+            WHERE gameRecommendationID = ?;
             """.trimMargin())
         preparedStatement?.setInt(1, id)
         preparedStatement?.executeUpdate()

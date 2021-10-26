@@ -15,7 +15,7 @@ fun main() {
         routing{
             get("/Comments"){
                 val commentDAO = CommentDAO()
-                commentDAO.update(Comments("Hyundai", "123", 2, 3, TYPE.MANGA))
+                commentDAO.update(Comments("Hyundai", "123", 2, 3, 1, 0))
                 var comments = commentDAO.getAll();
                 var commentsList : MutableList<Comments> = mutableListOf()
                 for (comment in comments){
