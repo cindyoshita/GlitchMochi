@@ -32,11 +32,7 @@ class GameRecommendationDAO : GenericDAO {
                 resultSet.getDate("postDate"),
                 resultSet.getString("text"),
                 resultSet.getInt("publicationID"),
-                if(comments?.type == TYPE.GAME)
-                    resultSet.getObject("commentID")
-                else
-                    println("error")
-                )
+
 
             println("GameRecommendation encontrados: ${gameRecommendation}")
         }

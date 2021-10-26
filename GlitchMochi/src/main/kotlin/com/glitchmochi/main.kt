@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
         var gameRecomendation = gameRecommendationDAO.getAll()
         //Intera pelo resultado obtido
         for (game in gameRecomendation){
-            println(gameRecomendation)
+            println(gameRecomendation!!.comment)
     }
 
 
