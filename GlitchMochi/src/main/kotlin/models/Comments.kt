@@ -1,12 +1,10 @@
 package models
 
-import ENUMs.TYPE
-
 data class Comments(
-    val owner: String,
+    val userID: Int,
     val text: String,
     val likes: Int,
     val commentID: Int,
-    val gameRecommendationID : Int,
-    val mangaRecommendationID : Int
+    val gameRecommendationID: Int?,
+    val mangaRecommendationID: Int?,
 )

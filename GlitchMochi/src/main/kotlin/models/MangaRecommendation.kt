@@ -6,10 +6,9 @@ import java.sql.Date
 data class MangaRecommendation(
     val userID        : Int,
     val score         : Double,
-    val image         : String,
-    val author        : String,
-    val genre         : GENRE,
     val title         : String,
+    val genre         : GENRE,
+    val author        : String,
     val postDate      : Date,
     val text          : String,
     val mangaRecommendationID : Int,

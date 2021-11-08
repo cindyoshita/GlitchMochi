@@ -1,3 +1,4 @@
+/*
 package com.glitchmochi
 
 import ENUMs.TYPE
@@ -34,3 +35,4 @@ fun main() {
     }.start(wait = true)
 
 }
+*/

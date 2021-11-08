@@ -14,14 +14,13 @@ class MangaRecommendationDAO : GenericDAO {
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
         val sqlStatement = connection.createStatement()
         // Executa uma querie de busca
-        val resultSet = sqlStatement.executeQuery("SELECT * FROM MangaRecommendation WHERE id == ${id};")
+        val resultSet = sqlStatement.executeQuery("SELECT * FROM MangaRecommendation WHERE mangaRecommendationID = ${id};")
         // Intera pelo resultado obtido
         var mangaRecommendation : MangaRecommendation? = null
         while(resultSet.next()){
             mangaRecommendation = MangaRecommendation(
                 resultSet.getInt("userID"),
                 resultSet.getDouble("score"),
-                resultSet.getString("image"),
                 resultSet.getString("author"),
                 GENRE.valueOf(resultSet.getString("genre")),
                 resultSet.getString("title"),
@@ -31,8 +30,6 @@ class MangaRecommendationDAO : GenericDAO {
                 resultSet.getString("manga"),
 
             )
-
-            println("MangaRecommendation encontrados: ${mangaRecommendation}")
         }
         resultSet.close()
         sqlStatement.close()
@@ -54,7 +51,6 @@ class MangaRecommendationDAO : GenericDAO {
                     MangaRecommendation(
                         resultSet.getInt("userID"),
                         resultSet.getDouble("score"),
-                        resultSet.getString("image"),
                         resultSet.getString("title"),
                         GENRE.valueOf(resultSet.getString("genre")),
                         resultSet.getString("author"),
@@ -79,19 +75,18 @@ class MangaRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO MangaRecommendation
-            (userID,score,image,title,genre,author,postDate,text,manga)
-            VALUES (?,?,?,?,?,?,?,?,?);
+            (userID,score,title,genre,author,postDate,text,manga)
+            VALUES (?,?,?,?,?,?,?,?);
             """.trimMargin())
         val mangaRecommendation = objeto as MangaRecommendation
         preparedStatement?.setInt(1, mangaRecommendation.userID)
         preparedStatement?.setDouble(2, mangaRecommendation.score)
-        preparedStatement?.setString(3, mangaRecommendation.image)
-        preparedStatement?.setString(4, mangaRecommendation.title)
-        preparedStatement?.setInt(5, mangaRecommendation.genre.ordinal)
-        preparedStatement?.setString(6, mangaRecommendation.author)
-        preparedStatement?.setDate(7, mangaRecommendation.postDate)
-        preparedStatement?.setString(8, mangaRecommendation.text)
-        preparedStatement?.setString(9, mangaRecommendation.manga)
+        preparedStatement?.setString(3, mangaRecommendation.title)
+        preparedStatement?.setInt(4, mangaRecommendation.genre.ordinal)
+        preparedStatement?.setString(5, mangaRecommendation.author)
+        preparedStatement?.setDate(6, mangaRecommendation.postDate)
+        preparedStatement?.setString(7, mangaRecommendation.text)
+        preparedStatement?.setString(8, mangaRecommendation.manga)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -102,20 +97,19 @@ class MangaRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO MangaRecommendation
-            (userID,score,image,title,genre,author,postDate,text,manga)
-            VALUES (?,?,?,?,?,?,?,?,?);
+            (userID,score,title,genre,author,postDate,text,manga)
+            VALUES (?,?,?,?,?,?,?,?);
             """.trimMargin())
         for (objeto in lista) {
             val mangaRecommendation = objeto as MangaRecommendation
             preparedStatement?.setInt(1, mangaRecommendation.userID)
             preparedStatement?.setDouble(2, mangaRecommendation.score)
-            preparedStatement?.setString(3, mangaRecommendation.image)
-            preparedStatement?.setString(4, mangaRecommendation.title)
-            preparedStatement?.setInt(5, mangaRecommendation.genre.ordinal)
-            preparedStatement?.setString(6, mangaRecommendation.author)
-            preparedStatement?.setDate(7, mangaRecommendation.postDate)
-            preparedStatement?.setString(8, mangaRecommendation.text)
-            preparedStatement?.setString(9, mangaRecommendation.manga)
+            preparedStatement?.setString(3, mangaRecommendation.title)
+            preparedStatement?.setInt(4, mangaRecommendation.genre.ordinal)
+            preparedStatement?.setString(5, mangaRecommendation.author)
+            preparedStatement?.setDate(6, mangaRecommendation.postDate)
+            preparedStatement?.setString(7, mangaRecommendation.text)
+            preparedStatement?.setString(8, mangaRecommendation.manga)
 
             preparedStatement?.executeUpdate()
             // Banco ja esta em auto commit
@@ -128,20 +122,19 @@ class MangaRecommendationDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             UPDATE MangaRecommendation
-            SET userID = ?, score = ?, image = ?, comment = ?, title = ?, genre = ?, author = ?, postDate = ?,text = ?, manga = ?
+            SET userID = ?, score = ?, title = ?, genre = ?, author = ?, postDate = ?,text = ?, manga = ?
             WHERE mangaRecommendationID = ?;
             """.trimMargin())
         val mangaRecommendation = objeto as MangaRecommendation
         preparedStatement?.setInt(1, mangaRecommendation.userID)
         preparedStatement?.setDouble(2, mangaRecommendation.score)
-        preparedStatement?.setString(3, mangaRecommendation.image)
-        preparedStatement?.setString(4, mangaRecommendation.title)
-        preparedStatement?.setInt(5, mangaRecommendation.genre.ordinal)
-        preparedStatement?.setString(6, mangaRecommendation.author)
-        preparedStatement?.setDate(7, mangaRecommendation.postDate)
-        preparedStatement?.setString(8, mangaRecommendation.text)
+        preparedStatement?.setString(3, mangaRecommendation.title)
+        preparedStatement?.setInt(4, mangaRecommendation.genre.ordinal)
+        preparedStatement?.setString(5, mangaRecommendation.author)
+        preparedStatement?.setDate(6, mangaRecommendation.postDate)
+        preparedStatement?.setString(7, mangaRecommendation.text)
+        preparedStatement?.setString(8, mangaRecommendation.manga)
         preparedStatement?.setInt(9, mangaRecommendation.mangaRecommendationID)
-        preparedStatement?.setString(10, mangaRecommendation.manga)
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -151,7 +144,7 @@ class MangaRecommendationDAO : GenericDAO {
     override fun delete(id: Int) {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
-            DELETE FROM GameRecommendation
+            DELETE FROM MangaRecommendation
             WHERE mangaRecommendationID = ?;
             """.trimMargin())
         preparedStatement?.setInt(1, id)

@@ -5,12 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8a33943-f3f8-40ee-a977-253058deba77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/GlitchMochi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/GlitchMochi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/ImageURLDAO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/ImageURL.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/ENUMs/CARGO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/ENUMs/CARGO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/ENUMs/GENRE.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/ENUMs/GENRE.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/CommentDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/CommentDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/GameRecommendationDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/GameRecommendationDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/MangaRecommendationDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/MangaRecommendationDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/UserDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/UserDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/Comments.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/Comments.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/GameRecommendation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/GameRecommendation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/MangaRecommendation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/MangaRecommendation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/ENUMs/CARGO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/ENUMs/CARGO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/ENUMs/GENRE.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/ENUMs/GENRE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/ENUMs/TYPE.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/ENUMs/TYPE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/plugins/RoutingKt$configureRouting$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/plugins/RoutingKt$configureRouting$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/plugins/RoutingKt$configureRouting$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/plugins/RoutingKt$configureRouting$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/plugins/RoutingKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/plugins/RoutingKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/CommentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/CommentDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/ConnectionDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/ConnectionDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/GameRecommendationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/GameRecommendationDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/models/Comments.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/models/Comments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/models/GameRecommendation.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/models/GameRecommendation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/models/MangaRecommendation.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/models/MangaRecommendation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/shared/SharedPaths$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/shared/SharedPaths$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/shared/SharedPaths.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/shared/SharedPaths.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/test-classes/META-INF/GlitchMochi.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/test-classes/META-INF/GlitchMochi.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/test-classes/com/glitchmochi/ApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/test-classes/com/glitchmochi/ApplicationTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,14 +70,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecm251-2021-lab3/projetosite" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -43,12 +87,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.ApplicationKt">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.MainKt">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -60,27 +99,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Aplication.kt" type="JetRunConfigurationType">
       <module name="GlitchMochi" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.glitchmochi.ApplicationKt" />
       <module name="GlitchMochi" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.glitchmochi.ApplicationKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="GlitchMochi" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.glitchmochi.MainKt" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
-      <item itemvalue="Kotlin.Aplication.kt" />
-      <item itemvalue="Kotlin.ApplicationKt" />
+      <item itemvalue="Application.Aplication.kt" />
+      <item itemvalue="Application.ApplicationKt" />
+      <item itemvalue="Application.MainKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.ApplicationKt" />
+        <item itemvalue="Application.MainKt" />
       </list>
     </recent_temporary>
   </component>
@@ -109,5 +180,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

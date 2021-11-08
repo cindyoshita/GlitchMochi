@@ -6,7 +6,6 @@ import java.sql.Date
 data class GameRecommendation(
     val userID               : Int,
     val score                : Double,
-    val image                : String,
     val game                 : String,
     val genre                : GENRE,
     val title                : String,

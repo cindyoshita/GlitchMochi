@@ -1,9 +1,9 @@
 package dao
 
-import ENUMs.TYPE
 import models.Comments
 import shared.SharedPaths
 import java.sql.DriverManager
+import java.sql.Types
 
 class CommentDAO : GenericDAO {
     override fun getOne(id: Int): Any {
@@ -12,20 +12,19 @@ class CommentDAO : GenericDAO {
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
         val sqlStatement = connection.createStatement()
         // Executa uma querie de busca
-        val resultSet = sqlStatement.executeQuery("SELECT * FROM Comment WHERE id == ${id};")
+        val resultSet = sqlStatement.executeQuery("SELECT * FROM Comment WHERE commentID == ${id};")
         // Intera pelo resultado obtido
         var comment : Comments? = null
         while(resultSet.next()){
             comment = Comments(
-                resultSet.getString(("owner")),
+                resultSet.getInt(("userID")),
                 resultSet.getString("text"),
                 resultSet.getInt("likes"),
                 resultSet.getInt("commentID"),
                 resultSet.getInt("gameRecommendationID"),
-                resultSet.getInt("mangaRecommendationID")
+                resultSet.getInt("mangaRecommendationID"),
             )
 
-            println("Comentarios encontrados: ${comment}")
         }
         resultSet.close()
         sqlStatement.close()
@@ -45,12 +44,12 @@ class CommentDAO : GenericDAO {
             while (resultSet?.next()!!) {
                 comments.add(
                     Comments(
-                        resultSet.getString(("owner")),
+                        resultSet.getInt(("userID")),
                         resultSet.getString("text"),
                         resultSet.getInt("likes"),
                         resultSet.getInt("commentID"),
                         resultSet.getInt("gameRecommendationID"),
-                        resultSet.getInt("mangaRecommendationID")
+                        resultSet.getInt("mangaRecommendationID"),
                     )
                 )
             }
@@ -68,15 +67,25 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO Comment  
-            (owner,text,likes,gameRecommendationID,mangaRecommendationID)
+            (userID,text,likes,gameRecommendationID,mangaRecommendationID)
             VALUES (?,?,?,?,?);
             """.trimMargin())
         val comment = objeto as Comments
-        preparedStatement?.setString(1, comment.owner)
+        preparedStatement?.setInt(1, comment.userID)
         preparedStatement?.setString(2, comment.text)
         preparedStatement?.setInt(3, comment.likes)
-        preparedStatement?.setInt(4, comment.gameRecommendationID)
-        preparedStatement?.setInt(5, comment.mangaRecommendationID)
+        if (comment.gameRecommendationID == null) {
+            preparedStatement?.setNull(4,  Types.INTEGER);
+        }
+        else {
+            preparedStatement?.setInt(4,comment.gameRecommendationID);
+        }
+        if (comment.mangaRecommendationID == null) {
+            preparedStatement?.setNull(5,  Types.INTEGER);
+        }
+        else {
+            preparedStatement?.setInt(5,comment.mangaRecommendationID);
+        }
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -87,16 +96,26 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             INSERT INTO Comment  
-            (owner,text,likes,gameRecommendationID,mangaRecommendationID)
+            (userID,text,likes,gameRecommendationID,mangaRecommendationID)
             VALUES (?,?,?,?,?);
             """.trimMargin())
         for (objeto in lista) {
             val comment = objeto as Comments
-            preparedStatement?.setString(1, comment.owner)
+            preparedStatement?.setInt(1, comment.userID)
             preparedStatement?.setString(2, comment.text)
             preparedStatement?.setInt(3, comment.likes)
-            preparedStatement?.setInt(4, comment.gameRecommendationID)
-            preparedStatement?.setInt(5, comment.mangaRecommendationID)
+            if (comment.gameRecommendationID == null) {
+                preparedStatement?.setNull(4,  Types.INTEGER);
+            }
+            else {
+                preparedStatement?.setInt(4, comment.gameRecommendationID);
+            }
+            if (comment.mangaRecommendationID == null) {
+                preparedStatement?.setNull(5,  Types.INTEGER);
+            }
+            else {
+                preparedStatement?.setInt(5,comment.mangaRecommendationID);
+            }
             preparedStatement?.executeUpdate()
             // Banco ja esta em auto commit
             //connectiondao.commit()
@@ -108,16 +127,25 @@ class CommentDAO : GenericDAO {
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             UPDATE Comment  
-            SET owner = ?, text = ?, likes = ?, gameRecommendationID = ?, mangaRecommendationID = ?
+            SET userID = ?, text = ?, likes = ?, gameRecommendationID = ?, mangaRecommendationID = ?
             WHERE commentID = ?;
             """.trimMargin())
         val comment = objeto as Comments
-        preparedStatement?.setString(1, comment.owner)
+        preparedStatement?.setInt(1, comment.userID)
         preparedStatement?.setString(2, comment.text)
         preparedStatement?.setInt(3, comment.likes)
-        preparedStatement?.setInt(4, comment.commentID)
-        preparedStatement?.setInt(5, comment.gameRecommendationID)
-        preparedStatement?.setInt(6, comment.mangaRecommendationID)
+        if (comment.gameRecommendationID == null) {
+            preparedStatement?.setNull(4,  Types.INTEGER);
+        }
+        else {
+            preparedStatement?.setInt(4,comment.gameRecommendationID);
+        }
+        if (comment.mangaRecommendationID == null) {
+            preparedStatement?.setNull(5,  Types.INTEGER);
+        }
+        else {
+            preparedStatement?.setInt(5,comment.mangaRecommendationID);
+        }
         preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
@@ -136,4 +164,5 @@ class CommentDAO : GenericDAO {
         //connectiondao.commit()
         connectiondao.close()
     }
+
 }
