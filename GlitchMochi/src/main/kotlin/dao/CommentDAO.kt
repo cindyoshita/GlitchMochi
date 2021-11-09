@@ -12,7 +12,7 @@ class CommentDAO : GenericDAO {
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
         val sqlStatement = connection.createStatement()
         // Executa uma querie de busca
-        val resultSet = sqlStatement.executeQuery("SELECT * FROM Comment WHERE commentID == ${id};")
+        val resultSet = sqlStatement.executeQuery("SELECT * FROM Comment WHERE commentID = ${id};")
         // Intera pelo resultado obtido
         var comment : Comments? = null
         while(resultSet.next()){

@@ -162,4 +162,17 @@ class GameRecommendationDAO : GenericDAO {
         //connectiondao.commit()
         connectiondao.close()
     }
+
+     fun getImage(id: Int){
+        val connectiondao = ConnectionDAO()
+        val preparedStatement = connectiondao.getPreparedStatement("""
+            DELETE FROM GameRecommendation
+            WHERE gameRecommendationID = ?;
+            """.trimMargin())
+        preparedStatement?.setInt(1, id)
+        preparedStatement?.executeUpdate()
+        // Banco ja esta em auto commit
+        //connectiondao.commit()
+        connectiondao.close()
+    }
 }

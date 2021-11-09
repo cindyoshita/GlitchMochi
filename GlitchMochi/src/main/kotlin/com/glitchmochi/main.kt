@@ -5,8 +5,26 @@ import ENUMs.GENRE
 import dao.*
 import models.*
 import java.sql.Date
+import java.sql.ResultSet
+import java.sql.SQLException
 import java.time.LocalDate
-
+/**
+ * Fonte: https://gist.github.com/cworks/4175942
+ */
+@Throws(SQLException::class)
+private fun resultSetToList(rs: ResultSet): MutableList<Map<String, String>> {
+    val md = rs.metaData
+    val columns = md.columnCount
+    val rows: MutableList<Map<String, String>> = ArrayList()
+    while (rs.next()) {
+        val row: MutableMap<String, String> = HashMap(columns)
+        for (i in 1..columns) {
+            row[md.getColumnName(i)] = rs.getString(i)
+        }
+        rows.add(row)
+    }
+    return rows
+}
 fun main(args: Array<String>) {
     // Criar um DAO para os produtos
     val commentsDAO = CommentDAO();
@@ -17,11 +35,13 @@ fun main(args: Array<String>) {
     // Comments(1,"jogo ", 1,1,null,null)
     //))
     //commentsDAO.delete(18)
-    var comments = commentsDAO.getAll()
+    //var comments = commentsDAO.getAll()
     //Intera pelo resultado obtido
-    for (comment in comments) {
-        println(comment)
-    }
+    //for (comment in comments) {
+    //    println(comment)
+    //}
+    var comments = commentsDAO.getOne(10)
+    println(comments)
 
     // Criar um DAO para os produtos
     val gameRecommendationDAO = GameRecommendationDAO()
@@ -81,10 +101,21 @@ fun main(args: Array<String>) {
     //    ImageURL("imagem6",1,null,4),
     //))
     //imageURLDAO.delete(5)
-    var imagesURL = imageURLDAO.getAll()
+    //var imagesURL = imageURLDAO.getAll()
+    var imagesURL = imageURLDAO.getOne(1)
+    println(imagesURL)
     //Intera pelo resultado obtido
-    for (image in imagesURL) {
-        println(image)
+    //for (image in imagesURL) {
+    //    println(image)
+    //}
+
+    var manga = mangaRecommendationDAO.getImage(1)
+   mangaRecomendation = mangaRecommendationDAO.getAll()
+    //var mangaRecomendation = mangaRecommendationDAO.getOne(1)
+    //println(mangaRecomendation)
+    //Intera pelo resultado obtido
+    while (manga?.next()!!) {
+        println(manga.getString("imageURL"))
     }
 }
 // Date.valueOf(LocalDate.now())

@@ -12,13 +12,13 @@ class ImageURLDAO : GenericDAO {
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
         val sqlStatement = connection.createStatement()
         // Executa uma querie de busca
-        val resultSet = sqlStatement.executeQuery("SELECT * FROM ImagesURL WHERE imageURLID == ${id};")
+        val resultSet = sqlStatement.executeQuery("SELECT * FROM ImagesURL WHERE imageURLID = ${id};")
         // Intera pelo resultado obtido
         var imageURL : ImageURL? = null
         while(resultSet.next()){
             imageURL = ImageURL(
                 resultSet.getString(("imageURL")),
-                resultSet.getInt("gamRecommendationID"),
+                resultSet.getInt("gameRecommendationID"),
                 resultSet.getInt("mangaRecommendationID"),
                 resultSet.getInt("imageURLID")
             )
@@ -155,5 +155,6 @@ class ImageURLDAO : GenericDAO {
         //connectiondao.commit()
         connectiondao.close()
     }
+
 
 }
