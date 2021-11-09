@@ -18,24 +18,24 @@ fun main() {
 
     embeddedServer(Netty, port = 80, host = "0.0.0.0") {
         routing{
-            get("/jogo/{jogoid}"){
-                val jogoid : Int = call.parameters["jogoid"]!!.toInt()
+            get("/game/{gameid}"){
+                val gameid : Int = call.parameters["gameid"]!!.toInt()
                 val gameRecommendationDAO : GameRecommendationDAO = GameRecommendationDAO()
-                val gr = gameRecommendationDAO.getOne(jogoid)
+                val gr = gameRecommendationDAO.getOne(gameid)
+                val image = gameRecommendationDAO.getImage(gameid)
                 call.respondText(gr.toString())
             }
             get("/manga/{mangaid}"){
                 val mangaid : Int = call.parameters["mangaid"]!!.toInt()
                 val mangaRecommendationDAO : MangaRecommendationDAO = MangaRecommendationDAO()
                 val mr = mangaRecommendationDAO.getOne(mangaid)
-                call.respondText(mr.toString())
+                val image = mangaRecommendationDAO.getImage(mangaid)
+                while (image?.next()!!) {
+                    call.respondText(image.getString("imageURL"))
+                }
+                //call.respondText(mr.toString())
             }
-            get("/imagem/{imagemid}"){
-                val imageid : Int = call.parameters["imagemid"]!!.toInt()
-                val imageDAO : ImageURLDAO = ImageURLDAO()
-                val image = imageDAO.getOne(imageid)
-                call.respondText(image.toString())
-            }
+
             get("/comentario/{comentarioid}"){
                 val commentid : Int = call.parameters["comentarioid"]!!.toInt()
                 val commentDAO : CommentDAO = CommentDAO()

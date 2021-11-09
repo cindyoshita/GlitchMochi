@@ -110,7 +110,7 @@ fun main(args: Array<String>) {
     //}
 
     var manga = mangaRecommendationDAO.getImage(1)
-   mangaRecomendation = mangaRecommendationDAO.getAll()
+   //mangaRecomendation = mangaRecommendationDAO.getAll()
     //var mangaRecomendation = mangaRecommendationDAO.getOne(1)
     //println(mangaRecomendation)
     //Intera pelo resultado obtido

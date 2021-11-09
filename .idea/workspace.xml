@@ -8,22 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/Application.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/CommentDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/CommentDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/GameRecommendationDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/GameRecommendationDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/ImageURLDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/ImageURLDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/MangaRecommendationDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/MangaRecommendationDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/UserDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/UserDAO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/META-INF/GlitchMochi.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/META-INF/GlitchMochi.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1$4.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/MainKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/MainKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/CommentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/CommentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/GameRecommendationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/GameRecommendationDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/ImageURLDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/dao/ImageURLDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +59,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainKt">
+  <component name="RunManager" selected="Application.ApplicationKt">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -133,8 +123,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainKt" />
         <item itemvalue="Application.ApplicationKt" />
+        <item itemvalue="Application.MainKt" />
       </list>
     </recent_temporary>
   </component>
