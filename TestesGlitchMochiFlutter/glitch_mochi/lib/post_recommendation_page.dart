@@ -1,6 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glitch_mochi/home_page.dart';
+import 'package:glitch_mochi/network_helper.dart';
+
+Controller controller = new Controller();
 
 class PostRecommendation extends StatefulWidget {
   @override
@@ -44,4 +49,8 @@ class PostRecommendationBase extends StatelessWidget {
       ),
     );
   }
+}
+
+void localPosts() async {
+  var postData = await controller.getData('http://localhost/', 'game/1');
 }
