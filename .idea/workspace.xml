@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8a33943-f3f8-40ee-a977-253058deba77" name="Default Changelist" comment="" />
+    <list default="true" id="d8a33943-f3f8-40ee-a977-253058deba77" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/game_post_recommendation_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/game_post_recommendation_page.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

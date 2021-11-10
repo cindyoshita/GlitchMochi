@@ -16,15 +16,18 @@ var title;
 var gameLenght;
 var gameStudio;
 var postDate;
+
 String text = '';
 var gameRecommendationID;
 
 void localPosts() async {
-  var postGameData =
+  var  postGameData =
       await controller.getData('http://localhost:8081/', 'game/1');
+  setState(postGameData);
   print(postGameData);
-
-  setState() {
+}
+  void setState(postGameData) {
+    print("entrou setstate");
     if (postGameData != null) {
       userID = postGameData['userID'].toString();
       score = postGameData['score'].toString();
@@ -41,7 +44,7 @@ void localPosts() async {
       print("GameRecommendation deu erro");
     }
   }
-}
+
 
 class GamePostRecommendation extends StatefulWidget {
   @override
