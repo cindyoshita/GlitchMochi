@@ -22,13 +22,13 @@ data class GameRecommendation(
                 "userID": $userID, 
                 "score": $score,
                 "game": "$game", 
-                "genre": $genre, 
+                "genre": "$genre", 
                 "title": "$title",
                 "gameLenght": $gameLenght, 
-                "gameStudio": $gameStudio,
+                "gameStudio": "$gameStudio",
                 "postDate": "$postDate",
                 "text": "$text",
-                "gameRecommendationID: $gameRecommendationID 
+                "gameRecommendationID": $gameRecommendationID 
                 }"""
     }
 
