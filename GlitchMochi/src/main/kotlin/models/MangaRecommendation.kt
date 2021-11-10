@@ -15,16 +15,16 @@ data class MangaRecommendation(
     val manga         : String
 ) {
     fun toJson(): String {
-        return "{" +
-                "'userID': $userID," +
-                "'score': $score," +
-                "'title': '$title'," +
-                "'genre': $genre," +
-                "'author': '$author'," +
-                "'postDate': '$postDate'," +
-                "'text': '$text'," +
-                "'mangaRecommendationID': $mangaRecommendationID," +
-                "'manga': '$manga'," +
-                "}"
+        return """{ 
+                "userID": $userID, 
+                "score": $score,
+                "title": "$title", 
+                "genre": "$genre", 
+                "author": "$author",
+                "postDate": "$postDate",
+                "text": "$text",
+                "mangaRecommendationID": $mangaRecommendationID,
+                "manga": "$manga"
+                }"""
     }
 }
