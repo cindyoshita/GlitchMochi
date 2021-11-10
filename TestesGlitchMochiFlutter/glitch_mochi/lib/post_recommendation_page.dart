@@ -7,6 +7,8 @@ import 'package:glitch_mochi/network_helper.dart';
 
 Controller controller = new Controller();
 
+var userID;
+
 class PostRecommendation extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -52,5 +54,7 @@ class PostRecommendationBase extends StatelessWidget {
 }
 
 void localPosts() async {
-  var postData = await controller.getData('http://localhost/', 'game/1');
+  var postGameData = await controller.getData('http://localhost/', 'game/1');
+
+  userID = postGameData['userID'].toString();
 }
