@@ -15,7 +15,8 @@ class AppWidget extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/home': (context) => HomePage(),
-        '/recommendation': (context) => GamePostRecommendation(),
+        '/gamerecommendation/$sameTypePublication': (context) =>
+            GamePostRecommendation(),
       },
     );
   }

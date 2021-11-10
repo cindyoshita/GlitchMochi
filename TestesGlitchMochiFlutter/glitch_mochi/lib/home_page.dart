@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glitch_mochi/game_post_recommendation_page.dart';
 
+var sameTypePublication = 2;
+
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -39,7 +41,8 @@ class _PostsState extends State<Posts> {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.of(context).pushNamed('/recommendation');
+                Navigator.of(context)
+                    .pushNamed('/gamerecommendation/$sameTypePublication');
               },
               child: Image.network(
                   "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
@@ -48,6 +51,24 @@ class _PostsState extends State<Posts> {
               alignment: Alignment.centerRight,
               child: (Text(
                 "Texto sobre Komi-san",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              )),
+            ),
+            // proxima postagem
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context)
+                    .pushNamed('/gamerecommendation/$sameTypePublication');
+              },
+              child: Image.network(
+                  "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),
+            ),
+            Container(
+              alignment: Alignment.centerRight,
+              child: (Text(
+                "Texto sobre eighty six",
                 style: TextStyle(
                   fontSize: 20,
                 ),
