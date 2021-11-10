@@ -9,6 +9,8 @@ import dao.GameRecommendationDAO
 import dao.ImageURLDAO
 import dao.MangaRecommendationDAO
 import io.ktor.application.*
+import io.ktor.features.*
+import io.ktor.http.*
 import io.ktor.response.*
 import io.ktor.routing.*
 import models.Comments
@@ -16,7 +18,11 @@ import models.GameRecommendation
 
 fun main() {
 
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0") {
+    embeddedServer(Netty, port = 8081, host = "0.0.0.0") {
+
+        install (CORS){method(HttpMethod.Options)
+            anyHost()}
+
         routing{
             get("/game/{gameid}"){
                 val gameid : Int = call.parameters["gameid"]!!.toInt()

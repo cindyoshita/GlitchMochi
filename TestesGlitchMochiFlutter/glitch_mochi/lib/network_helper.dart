@@ -12,10 +12,12 @@ class NetworkHelper {
     http.Response response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
+      print('entrou no if');
       // Resultado da requisição
       return jsonDecode(response.body);
     } else {
       print(response.statusCode);
+      print('entrou no else');
       return null;
     }
   }

@@ -16,7 +16,7 @@ var title;
 var gameLenght;
 var gameStudio;
 var postDate;
-var text;
+String text = '';
 var gameRecommendationID;
 
 class GamePostRecommendation extends StatefulWidget {
@@ -38,7 +38,18 @@ class GamePostRecommendationState extends State<GamePostRecommendation> {
   }
 }
 
-class PostRecommendationBase extends StatelessWidget {
+class PostRecommendationBase extends StatefulWidget {
+  @override
+  State<PostRecommendationBase> createState() => _PostRecommendationBaseState();
+}
+
+class _PostRecommendationBaseState extends State<PostRecommendationBase> {
+  @override
+  void initState() {
+    super.initState();
+    localPosts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -65,7 +76,8 @@ class PostRecommendationBase extends StatelessWidget {
 
 void localPosts() async {
   var postGameData =
-      await controller.getData('http://localhost:8080/', 'game/1');
+      await controller.getData('http://localhost:8081/', 'game/1');
+  print(postGameData);
 
   setState() {
     if (postGameData != null) {
@@ -78,6 +90,7 @@ void localPosts() async {
       gameStudio = postGameData['gameStudio'].toString();
       postDate = postGameData['postDate'].toString();
       text = postGameData['text'].toString();
+      print(text);
       gameRecommendationID = postGameData['gameRecommendationID'].toString();
     } else {
       print("GameRecommendation deu erro");
