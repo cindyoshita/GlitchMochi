@@ -17,15 +17,14 @@ data class MangaRecommendation(
     fun toJson(): String {
         return "{" +
                 "'userID': $userID," +
-                "'score': $score" +
-                "'title': $title" +
-                "'genre': $genre" +
-                "'author': $author" +
-                "'postDate': $postDate" +
-                "'text': $text" +
-                "'mangaRecommendationID': $mangaRecommendationID" +
-                "'manga': $manga" +
-                ""+
+                "'score': $score," +
+                "'title': '$title'," +
+                "'genre': $genre," +
+                "'author': '$author'," +
+                "'postDate': '$postDate'," +
+                "'text': '$text'," +
+                "'mangaRecommendationID': $mangaRecommendationID," +
+                "'manga': '$manga'," +
                 "}"
     }
 }
