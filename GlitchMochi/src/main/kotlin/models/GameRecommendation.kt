@@ -17,18 +17,19 @@ data class GameRecommendation(
 
 ){
     fun toJson(): String {
-        return "{" +
-                "'userID': $userID," +
-                "'score': $score," +
-                "'game': '$game'," +
-                "'genre': $genre," +
-                "'title': '$title'," +
-                "'gameLenght': $gameLenght," +
-                "'gameStudio': $gameStudio," +
-                "'postDate': '$postDate'," +
-                "'text': '$text'," +
-                "gameRecommendationID: $gameRecommendationID," +
-                "}"
+
+        return """{ 
+                "userID": $userID, 
+                "score": $score,
+                "game": "$game", 
+                "genre": $genre, 
+                "title": "$title",
+                "gameLenght": $gameLenght, 
+                "gameStudio": $gameStudio,
+                "postDate": "$postDate",
+                "text": "$text",
+                "gameRecommendationID: $gameRecommendationID 
+                }"""
     }
 
 

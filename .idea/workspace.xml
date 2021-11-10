@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d8a33943-f3f8-40ee-a977-253058deba77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/MangaRecommendation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/MangaRecommendation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/GameRecommendation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/models/GameRecommendation.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/META-INF/GlitchMochi.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/META-INF/GlitchMochi.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/com/glitchmochi/ApplicationKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/models/GameRecommendation.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/models/GameRecommendation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/target/classes/models/MangaRecommendation.class" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/target/classes/models/MangaRecommendation.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

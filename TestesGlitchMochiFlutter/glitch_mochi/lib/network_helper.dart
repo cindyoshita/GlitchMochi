@@ -9,7 +9,7 @@ class NetworkHelper {
   NetworkHelper({required this.url});
 
   Future getData(String endPoint) async {
-    http.Response response = await http.get(Uri.parse(url));
+    http.Response response = await http.get(Uri.parse(url+endPoint));
 
     if (response.statusCode == 200) {
       print('entrou no if');
