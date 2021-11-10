@@ -15,4 +15,14 @@ data class GameRecommendation(
     val text                 : String,
     val gameRecommendationID : Int
 
-)
+){
+    fun toJson(): String {
+        return "{" +
+                "'userID': $userID," +
+                "'score': $score" +
+                "" +
+                "}"
+    }
+
+
+}

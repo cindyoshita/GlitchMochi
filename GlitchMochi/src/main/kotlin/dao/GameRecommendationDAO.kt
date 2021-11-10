@@ -9,7 +9,7 @@ import shared.SharedPaths
 import java.sql.DriverManager
 
 class GameRecommendationDAO : GenericDAO {
-    override fun getOne(id: Int): Any {
+    override fun getOne(id: Int): GameRecommendation {
         // Criar uma comexão com o banco
         val connection = DriverManager.getConnection(SharedPaths.JDBC_COONECTION_STRING)
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
