@@ -23,7 +23,7 @@ fun main() {
                 val gameRecommendationDAO : GameRecommendationDAO = GameRecommendationDAO()
                 val gr = gameRecommendationDAO.getOne(gameid)
                 val image = gameRecommendationDAO.getImage(gameid)
-                call.respondText(image.toJson())
+                call.respondText(gr.toJson())
             }
             get("/manga/{mangaid}"){
                 val mangaid : Int = call.parameters["mangaid"]!!.toInt()
@@ -33,7 +33,7 @@ fun main() {
                 //while (image?.next()!!) {
                 //    call.respondText(image.getString("imageURL"))
                 //}
-                call.respondText(mr.toString())
+                call.respondText(mr.toJson())
             }
 
             get("/comentario/{comentarioid}"){

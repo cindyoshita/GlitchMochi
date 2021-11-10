@@ -9,7 +9,7 @@ import java.sql.DriverManager
 import java.sql.ResultSet
 
 class MangaRecommendationDAO : GenericDAO {
-    override fun getOne(id: Int): Any {
+    override fun getOne(id: Int): MangaRecommendation {
         // Criar uma comexão com o banco
         val connection = DriverManager.getConnection(SharedPaths.JDBC_COONECTION_STRING)
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword

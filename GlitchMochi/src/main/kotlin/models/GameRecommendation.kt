@@ -27,7 +27,7 @@ data class GameRecommendation(
                 "'gameStudio': $gameStudio" +
                 "'postDate': $postDate" +
                 "'text': $text" +
-                "gameRecommendationID: $gameRecommendationID"
+                "gameRecommendationID: $gameRecommendationID" +
                 "}"
     }
 
