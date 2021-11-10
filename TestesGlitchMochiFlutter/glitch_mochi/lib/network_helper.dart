@@ -1,5 +1,8 @@
 import 'dart:convert';
+import 'package:glitch_mochi/game_post_recommendation_page.dart';
 import 'package:http/http.dart' as http;
+
+GamePostRecommendation pr = new GamePostRecommendation();
 
 class NetworkHelper {
   final String url;
@@ -25,3 +28,5 @@ class Controller {
     return data;
   }
 }
+
+Future postDate(String endPoint, var json) async {}

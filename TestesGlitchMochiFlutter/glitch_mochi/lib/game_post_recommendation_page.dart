@@ -7,21 +7,31 @@ import 'package:glitch_mochi/network_helper.dart';
 
 Controller controller = new Controller();
 
+// Atributos do GameRecommendation model
 var userID;
+var score;
+var game;
+var genre;
+var title;
+var gameLenght;
+var gameStudio;
+var postDate;
+var text;
+var gameRecommendationID;
 
-class PostRecommendation extends StatefulWidget {
+class GamePostRecommendation extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return PostRecommendationState();
+    return GamePostRecommendationState();
   }
 }
 
-class PostRecommendationState extends State<PostRecommendation> {
+class GamePostRecommendationState extends State<GamePostRecommendation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Post recommendation"),
+        title: Text("GamePost recommendation"),
       ),
       body: PostRecommendationBase(),
     );
@@ -45,7 +55,7 @@ class PostRecommendationBase extends StatelessWidget {
               child: Image.network(
                   "https://cdn.cloudflare.steamstatic.com/steam/apps/920320/capsule_616x353.jpg?t=1635397862"),
             ),
-            Text("Texto sobre o jogo"),
+            Text(text),
           ],
         ),
       ),
@@ -56,5 +66,20 @@ class PostRecommendationBase extends StatelessWidget {
 void localPosts() async {
   var postGameData = await controller.getData('http://localhost/', 'game/1');
 
-  userID = postGameData['userID'].toString();
+  setState() {
+    if (postGameData != null) {
+      userID = postGameData['userID'].toString();
+      score = postGameData['score'].toString();
+      game = postGameData['game'].toString();
+      genre = postGameData['genre'].toString();
+      title = postGameData['title'].toString();
+      gameLenght = postGameData['gameLenght'].toString();
+      gameStudio = postGameData['gameStudio'].toString();
+      postDate = postGameData['postDate'].toString();
+      text = postGameData['text'].toString();
+      gameRecommendationID = postGameData['gameRecommendationID'].toString();
+    } else {
+      print("GameRecommendation deu erro");
+    }
+  }
 }

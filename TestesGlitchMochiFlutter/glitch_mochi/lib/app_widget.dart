@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glitch_mochi/home_page.dart';
-import 'package:glitch_mochi/post_recommendation_page.dart';
+import 'package:glitch_mochi/game_post_recommendation_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -15,7 +15,7 @@ class AppWidget extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/home': (context) => HomePage(),
-        '/recommendation': (context) => PostRecommendation(),
+        '/recommendation': (context) => GamePostRecommendation(),
       },
     );
   }

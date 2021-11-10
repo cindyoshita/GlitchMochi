@@ -2,7 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:glitch_mochi/post_recommendation_page.dart';
+import 'package:glitch_mochi/game_post_recommendation_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
