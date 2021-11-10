@@ -64,7 +64,8 @@ class PostRecommendationBase extends StatelessWidget {
 }
 
 void localPosts() async {
-  var postGameData = await controller.getData('http://localhost/', 'game/1');
+  var postGameData =
+      await controller.getData('http://localhost:8080/', 'game/1');
 
   setState() {
     if (postGameData != null) {
