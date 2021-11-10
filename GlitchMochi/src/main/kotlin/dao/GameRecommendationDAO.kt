@@ -163,7 +163,7 @@ class GameRecommendationDAO : GenericDAO {
         connectiondao.close()
     }
 
-     fun getImage(id: Int){
+     fun getImage(id: Int): GameRecommendation{
         val connectiondao = ConnectionDAO()
         val preparedStatement = connectiondao.getPreparedStatement("""
             DELETE FROM GameRecommendation
