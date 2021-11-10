@@ -38,11 +38,12 @@ class _PostsState extends State<Posts> {
         height: 400,
         width: 400,
         child: ListView(
+          // Primeira publicação
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .pushNamed('/gamerecommendation/$sameTypePublication');
+                sameTypePublication = 1;
+                Navigator.of(context).pushNamed('/gamerecommendation');
               },
               child: Image.network(
                   "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
@@ -56,11 +57,12 @@ class _PostsState extends State<Posts> {
                 ),
               )),
             ),
-            // proxima postagem
+
+            // Segunda postagem
             GestureDetector(
               onTap: () {
-                Navigator.of(context)
-                    .pushNamed('/gamerecommendation/$sameTypePublication');
+                sameTypePublication = 2;
+                Navigator.of(context).pushNamed('/gamerecommendation');
               },
               child: Image.network(
                   "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),

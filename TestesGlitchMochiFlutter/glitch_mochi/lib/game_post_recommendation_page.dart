@@ -22,7 +22,7 @@ var gameRecommendationID;
 
 void localPosts() async {
   var postGameData = await controller.getData(
-      'http://localhost:8081/', 'game/$sameTypePublication');
+      'http://localhost:8087/', 'game/$sameTypePublication');
   setState(postGameData);
   print(postGameData);
 }

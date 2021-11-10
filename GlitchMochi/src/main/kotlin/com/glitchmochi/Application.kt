@@ -18,7 +18,7 @@ import models.GameRecommendation
 
 fun main() {
 
-    embeddedServer(Netty, port = 8081, host = "0.0.0.0") {
+    embeddedServer(Netty, port = 8087, host = "0.0.0.0") {
 
         install (CORS){method(HttpMethod.Options)
             anyHost()}

@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:glitch_mochi/home_page.dart';
 import 'package:glitch_mochi/game_post_recommendation_page.dart';
 
-class AppWidget extends StatelessWidget {
+class AppWidget extends StatefulWidget {
+  @override
+  State<AppWidget> createState() => _AppWidgetState();
+}
+
+class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -15,8 +20,7 @@ class AppWidget extends StatelessWidget {
       home: HomePage(),
       routes: {
         '/home': (context) => HomePage(),
-        '/gamerecommendation/$sameTypePublication': (context) =>
-            GamePostRecommendation(),
+        '/gamerecommendation': (context) => GamePostRecommendation(),
       },
     );
   }
