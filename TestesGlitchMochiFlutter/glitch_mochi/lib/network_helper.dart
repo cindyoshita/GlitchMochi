@@ -17,3 +17,11 @@ class NetworkHelper {
     }
   }
 }
+
+class Controller {
+  Future<dynamic> getData(url, endPoint) async {
+    NetworkHelper networkHelper = NetworkHelper(url: url);
+    var data = await networkHelper.getData(endPoint);
+    return data;
+  }
+}
