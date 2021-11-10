@@ -23,7 +23,7 @@ fun main() {
                 val gameRecommendationDAO : GameRecommendationDAO = GameRecommendationDAO()
                 val gr = gameRecommendationDAO.getOne(gameid)
                 val image = gameRecommendationDAO.getImage(gameid)
-                call.respondText(gr.toString())
+                call.respondText(gr.toJson())
             }
             get("/manga/{mangaid}"){
                 val mangaid : Int = call.parameters["mangaid"]!!.toInt()
