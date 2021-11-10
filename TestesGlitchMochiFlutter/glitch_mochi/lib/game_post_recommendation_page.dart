@@ -19,6 +19,30 @@ var postDate;
 String text = '';
 var gameRecommendationID;
 
+void localPosts() async {
+  var postGameData =
+      await controller.getData('http://localhost:8081/', 'game/1');
+  print(postGameData);
+
+  setState() {
+    if (postGameData != null) {
+      userID = postGameData['userID'].toString();
+      score = postGameData['score'].toString();
+      game = postGameData['game'].toString();
+      genre = postGameData['genre'].toString();
+      title = postGameData['title'].toString();
+      gameLenght = postGameData['gameLenght'].toString();
+      gameStudio = postGameData['gameStudio'].toString();
+      postDate = postGameData['postDate'].toString();
+      text = postGameData['text'].toString();
+      print(text);
+      gameRecommendationID = postGameData['gameRecommendationID'].toString();
+    } else {
+      print("GameRecommendation deu erro");
+    }
+  }
+}
+
 class GamePostRecommendation extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -71,29 +95,5 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
         ),
       ),
     );
-  }
-}
-
-void localPosts() async {
-  var postGameData =
-      await controller.getData('http://localhost:8081/', 'game/1');
-  print(postGameData);
-
-  setState() {
-    if (postGameData != null) {
-      userID = postGameData['userID'].toString();
-      score = postGameData['score'].toString();
-      game = postGameData['game'].toString();
-      genre = postGameData['genre'].toString();
-      title = postGameData['title'].toString();
-      gameLenght = postGameData['gameLenght'].toString();
-      gameStudio = postGameData['gameStudio'].toString();
-      postDate = postGameData['postDate'].toString();
-      text = postGameData['text'].toString();
-      print(text);
-      gameRecommendationID = postGameData['gameRecommendationID'].toString();
-    } else {
-      print("GameRecommendation deu erro");
-    }
   }
 }
