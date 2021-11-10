@@ -7,6 +7,7 @@ import models.Comments
 import models.GameRecommendation
 import shared.SharedPaths
 import java.sql.DriverManager
+import java.sql.ResultSet
 
 class GameRecommendationDAO : GenericDAO {
     override fun getOne(id: Int): GameRecommendation {
@@ -163,16 +164,14 @@ class GameRecommendationDAO : GenericDAO {
         connectiondao.close()
     }
 
-     fun getImage(id: Int): GameRecommendation{
+    fun getImage(id: Int): ResultSet? {
         val connectiondao = ConnectionDAO()
-        val preparedStatement = connectiondao.getPreparedStatement("""
-            DELETE FROM GameRecommendation
-            WHERE gameRecommendationID = ?;
+        val resultSet = connectiondao.executeQuery("""
+            SELECT * FROM ImagesURL WHERE mangaRecommendationID = ${id};
             """.trimMargin())
-        preparedStatement?.setInt(1, id)
-        preparedStatement?.executeUpdate()
         // Banco ja esta em auto commit
         //connectiondao.commit()
+        return resultSet
         connectiondao.close()
     }
 }
