@@ -29,11 +29,11 @@ fun main() {
                 val mangaid : Int = call.parameters["mangaid"]!!.toInt()
                 val mangaRecommendationDAO : MangaRecommendationDAO = MangaRecommendationDAO()
                 val mr = mangaRecommendationDAO.getOne(mangaid)
-                val image = mangaRecommendationDAO.getImage(mangaid)
-                while (image?.next()!!) {
-                    call.respondText(image.getString("imageURL"))
-                }
-                //call.respondText(mr.toString())
+                //val image = mangaRecommendationDAO.getImage(mangaid)
+                //while (image?.next()!!) {
+                //    call.respondText(image.getString("imageURL"))
+                //}
+                call.respondText(mr.toString())
             }
 
             get("/comentario/{comentarioid}"){
