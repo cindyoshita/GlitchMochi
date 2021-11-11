@@ -40,7 +40,7 @@ fun main(args: Array<String>) {
     //for (comment in comments) {
     //    println(comment)
     //}
-    var comments = commentsDAO.getOne(10)
+    var comments = commentsDAO.getOne(1)
     println(comments)
 
     // Criar um DAO para os produtos

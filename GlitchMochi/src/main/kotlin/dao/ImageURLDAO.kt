@@ -7,12 +7,40 @@ import java.sql.Types
 
 class ImageURLDAO : GenericDAO {
     override fun getOne(id: Int): Any {
+        TODO("Not yet implemented")
+    }
+
+    fun getOneGame(id: Int): ImageURL {
         // Criar uma comexão com o banco
         val connection = DriverManager.getConnection(SharedPaths.JDBC_COONECTION_STRING)
         // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
         val sqlStatement = connection.createStatement()
         // Executa uma querie de busca
-        val resultSet = sqlStatement.executeQuery("SELECT * FROM ImagesURL WHERE imageURLID = ${id};")
+        val resultSet = sqlStatement.executeQuery("SELECT * FROM ImagesURL WHERE gameRecommendationID = ${id};")
+        // Intera pelo resultado obtido
+        var imageURL : ImageURL? = null
+        while(resultSet.next()){
+            imageURL = ImageURL(
+                resultSet.getString(("imageURL")),
+                resultSet.getInt("gameRecommendationID"),
+                resultSet.getInt("mangaRecommendationID"),
+                resultSet.getInt("imageURLID")
+            )
+
+        }
+        resultSet.close()
+        sqlStatement.close()
+        connection.close()
+        return imageURL!!
+    }
+
+    fun getOneManga(id: Int): ImageURL {
+        // Criar uma comexão com o banco
+        val connection = DriverManager.getConnection(SharedPaths.JDBC_COONECTION_STRING)
+        // Criar um caminho para realizar queries no banco jdbc:mariadb://192.168.56.101:3306/DB?user=root&password=myPassword
+        val sqlStatement = connection.createStatement()
+        // Executa uma querie de busca
+        val resultSet = sqlStatement.executeQuery("SELECT * FROM ImagesURL WHERE mangaRecommendationID = ${id};")
         // Intera pelo resultado obtido
         var imageURL : ImageURL? = null
         while(resultSet.next()){

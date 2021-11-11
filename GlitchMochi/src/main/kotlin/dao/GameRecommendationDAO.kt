@@ -2,6 +2,8 @@ package dao
 
 import ENUMs.GENRE
 import ENUMs.TYPE
+import io.ktor.application.*
+import io.ktor.response.*
 import io.ktor.util.*
 import models.Comments
 import models.GameRecommendation
@@ -164,14 +166,18 @@ class GameRecommendationDAO : GenericDAO {
         connectiondao.close()
     }
 
-    fun getImage(id: Int): ResultSet? {
+    fun getImage(id: Int): String {
         val connectiondao = ConnectionDAO()
+        val image : String
         val resultSet = connectiondao.executeQuery("""
-            SELECT * FROM ImagesURL WHERE mangaRecommendationID = ${id};
+            SELECT * FROM ImagesURL WHERE gameRecommendationID = ${id};
             """.trimMargin())
         // Banco ja esta em auto commit
         //connectiondao.commit()
-        return resultSet
+        while (resultSet?.next()!!) {
+           return resultSet.getString("imageURL")
+        }
+        return null!!
         connectiondao.close()
     }
 }

@@ -5,4 +5,13 @@ data class ImageURL (
     val gameRecommendationID     : Int?,
     val mangaRecommendationID    : Int?,
     val imageURLID             : Int
-)
+) {
+    fun toJson(): String {
+
+        return """{ 
+                "imageURL": "$imageURL"
+                }"""
+    }
+
+
+}

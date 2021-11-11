@@ -27,18 +27,16 @@ fun main() {
             get("/game/{gameid}"){
                 val gameid : Int = call.parameters["gameid"]!!.toInt()
                 val gameRecommendationDAO : GameRecommendationDAO = GameRecommendationDAO()
+                val imageURLDAO : ImageURLDAO = ImageURLDAO()
                 val gr = gameRecommendationDAO.getOne(gameid)
-                val image = gameRecommendationDAO.getImage(gameid)
+                val image = imageURLDAO.getOne(gameid)
+                val image2 = gameRecommendationDAO.getImage(gameid)
                 call.respondText(gr.toJson())
             }
             get("/manga/{mangaid}"){
                 val mangaid : Int = call.parameters["mangaid"]!!.toInt()
                 val mangaRecommendationDAO : MangaRecommendationDAO = MangaRecommendationDAO()
                 val mr = mangaRecommendationDAO.getOne(mangaid)
-                //val image = mangaRecommendationDAO.getImage(mangaid)
-                //while (image?.next()!!) {
-                //    call.respondText(image.getString("imageURL"))
-                //}
                 call.respondText(mr.toJson())
             }
 
@@ -48,6 +46,21 @@ fun main() {
                 val comment = commentDAO.getOne(commentid)
                 call.respondText(comment.toString())
             }
+
+            get("/imageurlgame/{imageid}"){
+                val imageid : Int = call.parameters["imageid"]!!.toInt()
+                val imageURLDAO : ImageURLDAO = ImageURLDAO()
+                val imageURLgame = imageURLDAO.getOneGame(imageid)
+                call.respondText(imageURLgame.toJson())
+            }
+
+            get("/imageurlmanga/{imageid}"){
+                val imageid : Int = call.parameters["imageid"]!!.toInt()
+                val imageURLDAO : ImageURLDAO = ImageURLDAO()
+                val imageURLmanga = imageURLDAO.getOneManga(imageid)
+                call.respondText(imageURLmanga.toJson())
+            }
+
         }
     }.start(wait = true)
 
