@@ -29,8 +29,6 @@ fun main() {
                 val gameRecommendationDAO : GameRecommendationDAO = GameRecommendationDAO()
                 val imageURLDAO : ImageURLDAO = ImageURLDAO()
                 val gr = gameRecommendationDAO.getOne(gameid)
-                val image = imageURLDAO.getOne(gameid)
-                val image2 = gameRecommendationDAO.getImage(gameid)
                 call.respondText(gr.toJson())
             }
             get("/manga/{mangaid}"){
