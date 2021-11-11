@@ -12,24 +12,33 @@ var userID;
 var score;
 var game;
 var genre;
-var titles;
+var titles = '';
 var gameLenght;
 var gameStudio;
 var postDate;
-
-String text = '';
+var text;
 var gameRecommendationID;
 
+// Atributos do imageURl model
+var imageURL = '';
+
 void localPosts() async {
+  // requisições https
   var postGameData = await controller.getData(
       'http://localhost:8087/', 'game/$sameTypePublication');
-  setState(postGameData);
-  print(postGameData);
+
+  var imageGameData = await controller.getData(
+      'http://localhost:8087/', 'imageurlgame/$sameTypePublication');
+
+  setState(postGameData, imageGameData);
+  print(imageGameData);
 }
 
-void setState(postGameData) {
+// Inicio setState
+void setState(postGameData, imageGameData) {
   print("entrou setstate");
-  if (postGameData != null) {
+  if (postGameData && imageGameData != null) {
+    // Atributos postGameData
     userID = postGameData['userID'].toString();
     score = postGameData['score'].toString();
     game = postGameData['game'].toString();
@@ -39,8 +48,10 @@ void setState(postGameData) {
     gameStudio = postGameData['gameStudio'].toString();
     postDate = postGameData['postDate'].toString();
     text = postGameData['text'].toString();
-    print(text);
     gameRecommendationID = postGameData['gameRecommendationID'].toString();
+
+    // Atributos imageGameData
+    imageURL = imageGameData['imageURL'].toString();
   } else {
     print("GameRecommendation deu erro");
   }
@@ -90,10 +101,9 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) => HomePage()));
               },
-              child: Image.network(
-                  "https://cdn.cloudflare.steamstatic.com/steam/apps/920320/capsule_616x353.jpg?t=1635397862"),
+              child: Image.network(imageURL),
             ),
-            Text(text),
+            Text(titles),
           ],
         ),
       ),
