@@ -20,7 +20,7 @@ var text;
 var gameRecommendationID;
 
 // Atributos do imageURl model
-var imageURL = '';
+var imageURL = 'https://img.anime2you.de/2020/09/hyouka.jpg';
 
 void localPosts() async {
   // requisições https
