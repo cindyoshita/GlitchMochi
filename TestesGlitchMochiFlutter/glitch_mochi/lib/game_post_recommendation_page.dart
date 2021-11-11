@@ -20,7 +20,7 @@ var text;
 var gameRecommendationID;
 
 // Atributos do imageURl model
-var imageURL = '';
+var imageURL = 'https://i.ytimg.com/vi/Y5k8L-ZyzJM/maxresdefault.jpg';
 
 void localPosts() async {
   // requisições https
@@ -37,7 +37,7 @@ void localPosts() async {
 // Inicio setState
 void setState(postGameData, imageGameData) {
   print("entrou setstate");
-  if (postGameData && imageGameData != null) {
+  if (postGameData != null && imageGameData != null) {
     // Atributos postGameData
     userID = postGameData['userID'].toString();
     score = postGameData['score'].toString();
@@ -52,6 +52,7 @@ void setState(postGameData, imageGameData) {
 
     // Atributos imageGameData
     imageURL = imageGameData['imageURL'].toString();
+    print(imageURL);
   } else {
     print("GameRecommendation deu erro");
   }
