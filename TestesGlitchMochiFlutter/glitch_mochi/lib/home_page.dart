@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glitch_mochi/game_post_recommendation_page.dart';
+import 'package:glitch_mochi/requisitions.dart';
 
 var sameTypePublication = 2;
 
@@ -35,8 +36,8 @@ class _PostsState extends State<Posts> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        height: 400,
-        width: 400,
+        height: 500,
+        width: 500,
         child: ListView(
           // Primeira publicação
           children: [
@@ -51,7 +52,7 @@ class _PostsState extends State<Posts> {
             Container(
               alignment: Alignment.centerRight,
               child: (Text(
-                "Texto sobre Komi-san",
+                "texto sobre Komi-san",
                 style: TextStyle(
                   fontSize: 20,
                 ),

@@ -15,7 +15,8 @@ class _AppWidgetState extends State<AppWidget> {
     return MaterialApp(
       title: 'Glitch Mochi',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.black87,
+        primarySwatch: Colors.deepPurple,
       ),
       home: HomePage(),
       routes: {
