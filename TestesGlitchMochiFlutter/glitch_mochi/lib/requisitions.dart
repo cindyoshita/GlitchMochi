@@ -4,14 +4,14 @@ import 'game_post_recommendation_page.dart';
 
 // Atributos do GameRecommendation model
 var userID_game;
-var score_game;
-var game;
-var genre_game;
+var score_game = '';
+var game = '';
+var genre_game = '';
 var titles_game = '';
-var gameLenght;
-var gameStudio;
+var gameLenght = '';
+var gameStudio = '';
 var postDate_game;
-var text_game;
+var text_game = '';
 var gameRecommendationID;
 
 // Atributos do imageURl model

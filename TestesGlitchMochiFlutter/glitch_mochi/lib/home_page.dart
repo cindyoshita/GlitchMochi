@@ -18,11 +18,12 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Glitch Mochi"),
-      ),
-      body: Posts(),
-    );
+        appBar: AppBar(
+          title: Text("Glitch Mochi"),
+        ),
+        body: Center(
+          child: Posts(),
+        ));
   }
 }
 
@@ -34,50 +35,58 @@ class Posts extends StatefulWidget {
 class _PostsState extends State<Posts> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 500,
-        width: 500,
-        child: ListView(
-          // Primeira publicação
-          children: [
-            GestureDetector(
-              onTap: () {
-                sameTypePublication = 1;
-                Navigator.of(context).pushNamed('/gamerecommendation');
-              },
-              child: Image.network(
-                  "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
-            ),
-            Container(
-              alignment: Alignment.centerRight,
-              child: (Text(
-                "texto sobre Komi-san",
-                style: TextStyle(
-                  fontSize: 20,
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Center(
+        child: AspectRatio(
+          aspectRatio: 70 / 100,
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: ListView(
+              // Primeira publicação
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    sameTypePublication = 1;
+                    Navigator.of(context).pushNamed('/gamerecommendation');
+                  },
+                  child: Image.network(
+                      "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
                 ),
-              )),
-            ),
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: (Text(
+                    "texto sobre Komi-san",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
 
-            // Segunda postagem
-            GestureDetector(
-              onTap: () {
-                sameTypePublication = 2;
-                Navigator.of(context).pushNamed('/gamerecommendation');
-              },
-              child: Image.network(
-                  "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),
-            ),
-            Container(
-              alignment: Alignment.centerRight,
-              child: (Text(
-                "Texto sobre eighty six",
-                style: TextStyle(
-                  fontSize: 20,
+                // Segunda postagem
+                GestureDetector(
+                  onTap: () {
+                    sameTypePublication = 2;
+                    Navigator.of(context).pushNamed('/gamerecommendation');
+                  },
+                  child: Image.network(
+                      "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),
                 ),
-              )),
+                Container(
+                  alignment: Alignment.centerRight,
+                  child: (Text(
+                    "Texto sobre eighty six",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
