@@ -80,63 +80,133 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
               ),
 
               // Nome  do game
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Nome do jogo: $game',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.deepPurple,
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Nome do jogo: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      '$game',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.pink,
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               // Score do Game
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Nota: $score_game',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.deepPurple,
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Nota: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      '$score_game',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.pink,
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               // Genero do game
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Genero do jogo: $genre_game',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.deepPurple,
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Genero do jogo: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      '$genre_game',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.pink,
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               // Studio do Game
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Estudio do jogo: $gameStudio',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.deepPurple,
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Estudio do jogo: $gameStudio',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Estudio do jogo: $gameStudio',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.pink,
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               // LongToBeat do game
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text(
-                  'Tempo pra zerar o jogo: $gameLenght',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.deepPurple,
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Tempo pra zerar o jogo: ',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
                   ),
-                ),
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      '$gameLenght',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.pink,
+                      ),
+                    ),
+                  ),
+                ],
               ),
 
               // Texto do game
