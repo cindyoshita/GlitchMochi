@@ -227,7 +227,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                     alignment: Alignment.topLeft,
                     child: Text(
                       '\n \n '
-                      '$userID_comment'
+                      '$userName_comment'
                       '        \n \n \n \n ',
                       style: TextStyle(
                         fontSize: 25,

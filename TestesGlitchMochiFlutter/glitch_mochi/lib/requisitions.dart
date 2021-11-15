@@ -21,6 +21,7 @@ var imageURL_game = 'https://i.ytimg.com/vi/Y5k8L-ZyzJM/maxresdefault.jpg';
 var userID_comment;
 var text_comment = '';
 var likes_comment = '';
+var userName_comment = '';
 
 // Inicio localPosts
 void localPosts() async {
@@ -62,6 +63,7 @@ void setState(postGameData, imageGameData, commentGameData) async {
     userID_comment = await commentGameData['userID'].toString();
     text_comment = await commentGameData['text'].toString();
     likes_comment = await commentGameData['like'].toString();
+    userName_comment = await commentGameData['userName'].toString();
   } else {
     print("GameRecommendation deu erro");
   }
