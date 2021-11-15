@@ -34,12 +34,12 @@ void localPosts() async {
   var commentGameData = await controller.getData(
       'http://localhost:8087/', 'commentgame/$sameTypePublication');
 
-  setState(postGameData, imageGameData);
+  setState(postGameData, imageGameData, commentGameData);
   print(imageGameData);
 }
 
 // Inicio setState
-void setState(postGameData, imageGameData) async {
+void setState(postGameData, imageGameData, commentGameData) async {
   print("entrou setstate");
   if (postGameData != null && imageGameData != null) {
     // Atributos postGameData
@@ -59,9 +59,9 @@ void setState(postGameData, imageGameData) async {
     imageURL_game = await imageGameData['imageURL'].toString();
 
     // Atributos commentGameData
-    // userID_comment = await commentGameData['userID'].toString();
-    // text_comment = await commentGameData['text'].toString();
-    // likes_comment = await commentGameData['like'].toString();
+    userID_comment = await commentGameData['userID'].toString();
+    text_comment = await commentGameData['text'].toString();
+    likes_comment = await commentGameData['like'].toString();
   } else {
     print("GameRecommendation deu erro");
   }
