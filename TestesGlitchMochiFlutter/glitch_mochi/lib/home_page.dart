@@ -51,6 +51,7 @@ class _PostsState extends State<Posts> {
                   GestureDetector(
                     onTap: () async {
                       sameTypePublication = 1;
+
                       await Navigator.of(context)
                           .pushNamed('/gamerecommendation');
                     },

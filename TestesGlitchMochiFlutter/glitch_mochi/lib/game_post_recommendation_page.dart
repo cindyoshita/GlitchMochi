@@ -219,6 +219,16 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   ),
                 ),
               ),
+
+              // commentarios
+              // Container(
+              //     child: Text(
+              //   text_comment,
+              //   style: TextStyle(
+              //     fontSize: 15,
+              //     color: Colors.yellow,
+              //   ),
+              // ))
             ],
           ),
         ),

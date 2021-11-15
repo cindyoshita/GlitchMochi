@@ -19,6 +19,7 @@ class _AppWidgetState extends State<AppWidget> {
         primarySwatch: Colors.deepPurple,
       ),
       home: HomePage(),
+      initialRoute: '/home',
       routes: {
         '/home': (context) => HomePage(),
         '/gamerecommendation': (context) => GamePostRecommendation(),

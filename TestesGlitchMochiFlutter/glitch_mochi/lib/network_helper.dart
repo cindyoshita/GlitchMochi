@@ -16,8 +16,8 @@ class NetworkHelper {
       // Resultado da requisição
       return jsonDecode(response.body);
     } else {
-      print(response.statusCode);
       print('entrou no else');
+      print(response.statusCode);
       return null;
     }
   }
