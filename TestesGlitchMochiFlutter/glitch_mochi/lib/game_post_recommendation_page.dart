@@ -72,9 +72,9 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                onTap: () async {
+                  await (Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomePage())));
                 },
                 child: Image.network(imageURL_game),
               ),
@@ -83,7 +83,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  game,
+                  'Nome do jogo: $game',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.deepPurple,
@@ -95,7 +95,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  score_game,
+                  'Nota: $score_game',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.deepPurple,
@@ -107,7 +107,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  genre_game,
+                  'Genero do jogo: $genre_game',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.deepPurple,
@@ -119,7 +119,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  gameStudio,
+                  'Estudio do jogo: $gameStudio',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.deepPurple,
@@ -131,7 +131,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  gameLenght,
+                  'Tempo pra zerar o jogo: $gameLenght',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.deepPurple,

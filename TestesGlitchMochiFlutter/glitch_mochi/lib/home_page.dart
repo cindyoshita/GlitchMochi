@@ -43,48 +43,53 @@ class _PostsState extends State<Posts> {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            child: ListView(
-              // Primeira publicação
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    sameTypePublication = 1;
-                    Navigator.of(context).pushNamed('/gamerecommendation');
-                  },
-                  child: Image.network(
-                      "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
-                ),
-                Container(
-                  alignment: Alignment.centerRight,
-                  child: (Text(
-                    "texto sobre Komi-san",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  )),
-                ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8, 80, 8, 0),
+              child: ListView(
+                // Primeira publicação
+                children: [
+                  GestureDetector(
+                    onTap: () async {
+                      sameTypePublication = 1;
+                      await Navigator.of(context)
+                          .pushNamed('/gamerecommendation');
+                    },
+                    child: Image.network(
+                        "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: (Text(
+                      "texto sobre Komi-san",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ),
 
-                // Segunda postagem
-                GestureDetector(
-                  onTap: () {
-                    sameTypePublication = 2;
-                    Navigator.of(context).pushNamed('/gamerecommendation');
-                  },
-                  child: Image.network(
-                      "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),
-                ),
-                Container(
-                  alignment: Alignment.centerRight,
-                  child: (Text(
-                    "Texto sobre eighty six",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  )),
-                ),
-              ],
+                  // Segunda postagem
+                  GestureDetector(
+                    onTap: () async {
+                      sameTypePublication = 2;
+                      await Navigator.of(context)
+                          .pushNamed('/gamerecommendation');
+                    },
+                    child: Image.network(
+                        "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: (Text(
+                      "Texto sobre eighty six",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
