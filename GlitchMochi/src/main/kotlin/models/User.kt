@@ -11,12 +11,7 @@ data class User(
     val userID      : Int
 ){// Transformar as variaveis utilizadas no flutter em um JSON
 fun toJson(): String {
-    return """{ 
-                "userName": $userName, 
-                "password": $password,
-                "avatar": "$avatar", 
-                "cargo": "$cargo", 
-                "userID": "$userID",
+    return """"userName": "$userName"
                 }"""
 }
 }

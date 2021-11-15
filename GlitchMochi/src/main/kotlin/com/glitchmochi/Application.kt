@@ -1,17 +1,15 @@
 
 package com.glitchmochi
 
+import dao.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import dao.CommentDAO
-import dao.GameRecommendationDAO
-import dao.ImageURLDAO
-import dao.MangaRecommendationDAO
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.http.*
 import io.ktor.response.*
 import io.ktor.routing.*
+import models.User
 
 
 fun main() {
@@ -40,8 +38,10 @@ fun main() {
             get("/commentgame/{commentid}"){//Essa rota pega os valores do comment do banco de dados e faz a acao solicitada
                 val commentid : Int = call.parameters["commentid"]!!.toInt() // Atribui ao commentid o numero colocado na rota
                 val commentDAO : CommentDAO = CommentDAO()
+                val userDAO : UserDAO = UserDAO()
                 val comment = commentDAO.getOneGame(commentid) // Atribui ao comment a acao de GetOneGame do CommentDAO no número do commentid
-                call.respondText(comment.toJson()) // Transforma o comment em JSON e coloca na rota
+                val user = userDAO.getOne(comment.userID)
+                call.respondText(comment.toJson() + user.toJson()) // Transforma o comment em JSON e coloca na rota
             }
 
             get("/commentmanga/{commentid}"){//Essa rota pega os valores do comment do banco de dados e faz a acao solicitada

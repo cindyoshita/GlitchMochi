@@ -13,7 +13,7 @@ fun toJson(): String {
     return """{ 
                 "userID": $userID, 
                 "text": "$text",
-                "likes": $likes
-                }"""
+                "likes": $likes,
+                """
 }
 }
