@@ -37,10 +37,17 @@ fun main() {
                 call.respondText(mr.toJson()) // Transforma o mr em JSON e coloca na rota
             }
 
-            get("/comment/{commentid}"){//Essa rota pega os valores do comment do banco de dados e faz a acao solicitada
+            get("/commentgame/{commentid}"){//Essa rota pega os valores do comment do banco de dados e faz a acao solicitada
                 val commentid : Int = call.parameters["commentid"]!!.toInt() // Atribui ao commentid o numero colocado na rota
                 val commentDAO : CommentDAO = CommentDAO()
-                val comment = commentDAO.getOne(commentid) // Atribui ao comment a acao de GetOne do CommentDAO no número do commentid
+                val comment = commentDAO.getOneGame(commentid) // Atribui ao comment a acao de GetOneGame do CommentDAO no número do commentid
+                call.respondText(comment.toJson()) // Transforma o comment em JSON e coloca na rota
+            }
+
+            get("/commentmanga/{commentid}"){//Essa rota pega os valores do comment do banco de dados e faz a acao solicitada
+                val commentid : Int = call.parameters["commentid"]!!.toInt() // Atribui ao commentid o numero colocado na rota
+                val commentDAO : CommentDAO = CommentDAO()
+                val comment = commentDAO.getOneManga(commentid) // Atribui ao comment a acao de GetOneManga do CommentDAO no número do commentid
                 call.respondText(comment.toJson()) // Transforma o comment em JSON e coloca na rota
             }
 

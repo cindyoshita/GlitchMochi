@@ -14,9 +14,6 @@ fun toJson(): String {
                 "userID": $userID, 
                 "text": $text,
                 "likes": "$likes", 
-                "commentID": "$commentID", 
-                "gameRecommendationID": "$gameRecommendationID",
-                "mangaRecommemdationID": "$mangaRecommendationID",
                 }"""
 }
 }
