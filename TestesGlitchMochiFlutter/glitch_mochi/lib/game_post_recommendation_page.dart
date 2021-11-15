@@ -163,7 +163,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Estudio do jogo: $gameStudio',
+                      'Estudio do jogo: ',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.deepPurple,
@@ -173,7 +173,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Estudio do jogo: $gameStudio',
+                      '$gameStudio',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.pink,
