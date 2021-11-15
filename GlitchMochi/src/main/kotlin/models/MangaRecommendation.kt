@@ -3,6 +3,7 @@ package models
 import ENUMs.GENRE
 import java.sql.Date
 
+// Variaveis encontrados no MangaRecommendation do banco de dados e usado nesse programa
 data class MangaRecommendation(
     val userID        : Int,
     val score         : Double,
@@ -13,7 +14,7 @@ data class MangaRecommendation(
     val text          : String,
     val mangaRecommendationID : Int,
     val manga         : String
-) {
+) {// Transformar as variaveis utilizadas no flutter em um JSON
     fun toJson(): String {
         return """{ 
                 "userID": $userID, 
