@@ -220,15 +220,32 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ),
               ),
 
-              // commentarios
-              // Container(
-              //     child: Text(
-              //   text_comment,
-              //   style: TextStyle(
-              //     fontSize: 15,
-              //     color: Colors.yellow,
-              //   ),
-              // ))
+              //commentarios
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      '\n \n '
+                      '$userID_comment'
+                      '        \n \n \n \n ',
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
+                  Container(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        '$text_comment',
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.yellow,
+                        ),
+                      ))
+                ],
+              )
             ],
           ),
         ),
