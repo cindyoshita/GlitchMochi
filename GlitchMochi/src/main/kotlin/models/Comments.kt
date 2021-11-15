@@ -12,7 +12,7 @@ data class Comments(
 fun toJson(): String {
     return """{ 
                 "userID": $userID, 
-                "text": $text,
+                "text": "$text",
                 "likes": "$likes", 
                 }"""
 }
