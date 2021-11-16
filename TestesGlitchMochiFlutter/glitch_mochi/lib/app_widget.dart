@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glitch_mochi/home_page.dart';
 import 'package:glitch_mochi/game_post_recommendation_page.dart';
+import 'package:glitch_mochi/manga_post_recommendation_page.dart';
 
 class AppWidget extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _AppWidgetState extends State<AppWidget> {
       routes: {
         '/home': (context) => HomePage(),
         '/gamerecommendation': (context) => GamePostRecommendation(),
+        '/mangarecommendation': (context) => MangaPostRecommendation(),
       },
     );
   }

@@ -20,9 +20,9 @@ class MangaRecommendationDAO : GenericDAO {
                 mangaRecommendation = MangaRecommendation(
                     resultSet.getInt("userID"),
                     resultSet.getDouble("score"),
-                    resultSet.getString("author"),
-                    GENRE.valueOf(resultSet.getString("genre")),
                     resultSet.getString("title"),
+                    GENRE.valueOf(resultSet.getString("genre")),
+                    resultSet.getString("author"),
                     resultSet.getDate("postDate"),
                     resultSet.getString("text"),
                     resultSet.getInt("mangaRecommendationID"),

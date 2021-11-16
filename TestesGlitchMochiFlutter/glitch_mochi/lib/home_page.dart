@@ -89,6 +89,48 @@ class _PostsState extends State<Posts> {
                       ),
                     )),
                   ),
+
+                  // terceira postagem manga
+                   GestureDetector(
+                    onTap: () async {
+                      sameTypePublication = 1;
+                      await Navigator.of(context)
+                          .pushNamed('/mangarecommendation');
+                    },
+                    child: Image.network(
+                        "https://ptanime.com/wp-content/uploads/2018/02/Merc-Storia-RPG-fantasy-smartphone-game-anime-anuncio-v1.jpg"),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: (Text(
+                      "Texto sobre merc storia",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ),
+
+                  // quarta postagem manga
+                   GestureDetector(
+                    onTap: () async {
+                      sameTypePublication = 2;
+                      await Navigator.of(context)
+                          .pushNamed('/mangarecommendation');
+                    },
+                    child: Image.network(
+                        "https://sucodemanga.com.br/wp-content/uploads/2021/09/shadows-house-thumb-2.png"),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: (Text(
+                      "Texto sobre shadow house",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ),
                 ],
               ),
             ),

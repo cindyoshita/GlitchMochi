@@ -9,8 +9,6 @@ import io.ktor.features.*
 import io.ktor.http.*
 import io.ktor.response.*
 import io.ktor.routing.*
-import models.User
-
 
 fun main() {
 
@@ -46,9 +44,11 @@ fun main() {
 
             get("/commentmanga/{commentid}"){//Essa rota pega os valores do comment do banco de dados e faz a acao solicitada
                 val commentid : Int = call.parameters["commentid"]!!.toInt() // Atribui ao commentid o numero colocado na rota
+                val userDAO : UserDAO = UserDAO()
                 val commentDAO : CommentDAO = CommentDAO()
                 val comment = commentDAO.getOneManga(commentid) // Atribui ao comment a acao de GetOneManga do CommentDAO no número do commentid
-                call.respondText(comment.toJson()) // Transforma o comment em JSON e coloca na rota
+                val user = userDAO.getOne(comment.userID)
+                call.respondText(comment.toJson()+ user.toJson()) // Transforma o comment em JSON e coloca na rota
             }
 
             get("/imageurlgame/{imageid}"){//Essa rota pega os valores do imageURL do banco de dados e faz a acao solicitada

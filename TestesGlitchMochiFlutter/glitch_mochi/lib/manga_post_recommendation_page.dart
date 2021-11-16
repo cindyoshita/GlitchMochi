@@ -8,81 +8,82 @@ import 'package:glitch_mochi/requisitions.dart';
 
 Controller controller = new Controller();
 
-class GamePostRecommendation extends StatefulWidget {
+class MangaPostRecommendation extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return GamePostRecommendationState();
+    // TODO: implement createState
+    return _MangaPostRecommendationState();
   }
 }
 
-class GamePostRecommendationState extends State<GamePostRecommendation> {
+class _MangaPostRecommendationState extends State<MangaPostRecommendation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("GamePost recommendation"),
+        title: Text('MangaPost Recommendation'),
       ),
       body: PostRecommendationBase(),
     );
   }
 }
 
-class PostRecommendationBase extends StatefulWidget {
+class PostRecommendationBase extends StatefulWidget{
   @override
   State<PostRecommendationBase> createState() => _PostRecommendationBaseState();
 }
 
 class _PostRecommendationBaseState extends State<PostRecommendationBase> {
   @override
-  void initState() {
+  void initState(){
     super.initState();
     localPosts();
   }
-
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Center(
       child: AspectRatio(
-        aspectRatio: 70 / 100,
+        aspectRatio: 70/100,
         child: Container(
           height: 1000,
           width: 1000,
           child: ListView(
             children: [
-              // Titulo do game
+              // Titulo da postagem do manga
               Container(
                 alignment: Alignment.topCenter,
                 child: Text(
-                  titles_game,
+                  titles_manga,
                   style: TextStyle(
                     fontSize: 50,
                     color: Colors.white,
                   ),
                 ),
               ),
-              // Data do Game
+               // Data do Game
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  postDate_game,
+                  postDate_manga,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                   ),
                 ),
               ),
-              // Imagem do Game
+              // Imagem do Manga
               Container(
-                child: Image.network(imageURL_game),
+                child: Image.network(imageURL_manga),
               ),
 
-              // Nome  do game
+              // Nome  do manga
               Row(
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Nome do jogo: ',
+                      'Nome do manga: ',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.deepPurple,
@@ -92,7 +93,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      '$game',
+                      '$manga',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.pink,
@@ -102,7 +103,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ],
               ),
 
-              // Score do Game
+              // Score do Manga
               Row(
                 children: [
                   Container(
@@ -118,7 +119,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      '$score_game',
+                      '$score_manga',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.pink,
@@ -128,13 +129,13 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ],
               ),
 
-              // Genero do game
+          // Genero do manga
               Row(
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Genero do jogo: ',
+                      'Genero do manga: ',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.deepPurple,
@@ -144,7 +145,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      '$genre_game',
+                      '$genre_manga',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.pink,
@@ -154,13 +155,13 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ],
               ),
 
-              // Studio do Game
+              // Autor do manga
               Row(
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      'Estudio do jogo: ',
+                      'Autor do manga: ',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.deepPurple,
@@ -170,7 +171,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      '$gameStudio',
+                      '$author_manga',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.pink,
@@ -180,36 +181,10 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ],
               ),
 
-              // LongToBeat do game
-              Row(
-                children: [
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      'Tempo pra zerar o jogo: ',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.deepPurple,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      '$gameLenght',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.pink,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-              // Texto do game
+              // Texto do manga
               Container(
                 child: Text(
-                  text_game,
+                  text_manga,
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -217,14 +192,14 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ),
               ),
 
-              //commentarios
+               //commentarios do manga
               Row(
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
                       '\n \n '
-                      '$userName_comment'
+                      '$userName_commentmanga'
                       '        \n \n \n \n ',
                       style: TextStyle(
                         fontSize: 25,
@@ -235,7 +210,7 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                   Container(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        '$text_comment',
+                        '$text_commentmanga',
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.yellow,
@@ -244,9 +219,9 @@ class _PostRecommendationBaseState extends State<PostRecommendationBase> {
                 ],
               )
             ],
-          ),
-        ),
+          )
+          )
       ),
-    );
+      );
   }
 }
