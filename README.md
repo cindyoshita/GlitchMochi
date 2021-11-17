@@ -37,6 +37,10 @@ Assim foram definido os 3 tipos de página:
 > ![image](https://user-images.githubusercontent.com/73084673/142280580-ee0f9f87-9e05-4766-aa4b-5408cba7ba24.png)
 
 #### MangaRecommendation
+> ![image](https://user-images.githubusercontent.com/73084673/142283069-28f6ff32-c972-48c8-b4ae-7dbc8a5b7605.png)
+
 
 #### GameRecommendation
+> ![image](https://user-images.githubusercontent.com/73084673/142283131-c2575454-8f55-4a41-ad60-fcb6bccffb24.png)
+
 
