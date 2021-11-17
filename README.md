@@ -33,5 +33,6 @@ Na classe main estamos apenas referenciando o appwidget, que por sua vez está d
 
 Assim foram definido os 3 tipos de página:
 
-> homepage
-> 
+#### HomePage
+> ![image](https://user-images.githubusercontent.com/73084673/142280580-ee0f9f87-9e05-4766-aa4b-5408cba7ba24.png)
+
