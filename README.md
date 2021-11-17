@@ -29,3 +29,4 @@ Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão
 
 Na classe main estamos apenas referenciando o appwidget, que por sua vez está definindo o site.
 
+![image](https://user-images.githubusercontent.com/73084673/142279927-34facb2c-7ea4-4b51-8cfa-4934cc8251cf.png)
