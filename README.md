@@ -45,4 +45,4 @@ Assim foram definido os 3 tipos de página:
 
 ## Como rodar?
 
-Para que o site/aplicação consiga ser simulado, é necessário rodar o application.kt do BackEnd com a maquina virtual do mariaDB, ligada, para que seja possível acessar os dados do banco de dados. A seguir, deve-se rodar o código em dart do flutter para que a pagina da web (no caso o chrome) seja iniciada, mostrando a aplicação funcional.
+Para que o site/aplicação consiga ser simulado, é necessário rodar o application.kt do BackEnd com a máquina virtual do mariaDB, ligada, para que seja possível acessar os dados do banco de dados. A seguir, deve-se rodar o código em dart do flutter para que a página da web (no caso o chrome) seja iniciada, mostrando a aplicação funcional.
