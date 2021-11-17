@@ -36,6 +36,8 @@ Na classe main estamos apenas referenciando o appwidget, que por sua vez está d
 >> ![image](https://user-images.githubusercontent.com/79462846/142285840-fbf52136-8adf-4692-ae9d-d9c56ce1ca7a.png)
 > ##### Mockup dos Posts
 >> ![image](https://user-images.githubusercontent.com/79462846/142286988-fd4df1e2-0016-44cf-b164-3393a1655f54.png)
+>> ![image](https://user-images.githubusercontent.com/73084673/142289360-283a8aba-4f7b-4246-acd8-e98212959421.png)
+
 
 
 Assim foram definido os 3 tipos de página:
