@@ -31,18 +31,20 @@ Na classe main estamos apenas referenciando o appwidget, que por sua vez está d
 
 ![image](https://user-images.githubusercontent.com/73084673/142279927-34facb2c-7ea4-4b51-8cfa-4934cc8251cf.png)
 
+#### Mockups
+> ##### Mockup do Homepage
+>> ![image](https://user-images.githubusercontent.com/79462846/142285840-fbf52136-8adf-4692-ae9d-d9c56ce1ca7a.png)
+> ##### Mockup dos Posts
+>> ![image](https://user-images.githubusercontent.com/79462846/142286988-fd4df1e2-0016-44cf-b164-3393a1655f54.png)
+
+
 Assim foram definido os 3 tipos de página:
 
 #### HomePage
 > ![image](https://user-images.githubusercontent.com/73084673/142280580-ee0f9f87-9e05-4766-aa4b-5408cba7ba24.png)
-> ##### Mockup do Homepage
->> ![image](https://user-images.githubusercontent.com/79462846/142285840-fbf52136-8adf-4692-ae9d-d9c56ce1ca7a.png)
-
-
 
 #### MangaRecommendation
 > ![image](https://user-images.githubusercontent.com/73084673/142283069-28f6ff32-c972-48c8-b4ae-7dbc8a5b7605.png)
-
 
 #### GameRecommendation
 > ![image](https://user-images.githubusercontent.com/73084673/142283131-c2575454-8f55-4a41-ad60-fcb6bccffb24.png)
