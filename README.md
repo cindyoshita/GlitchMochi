@@ -36,7 +36,8 @@ Assim foram definido os 3 tipos de página:
 #### HomePage
 > ![image](https://user-images.githubusercontent.com/73084673/142280580-ee0f9f87-9e05-4766-aa4b-5408cba7ba24.png)
 > ##### Mockup do Homepage
->> 
+>> ![image](https://user-images.githubusercontent.com/79462846/142285840-fbf52136-8adf-4692-ae9d-d9c56ce1ca7a.png)
+
 
 
 #### MangaRecommendation
