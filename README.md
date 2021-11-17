@@ -19,3 +19,8 @@ Assim como o seu respectivo GameRecommendationDAO (outros também foram feitos, 
 
 E por fim, criamos o application.kt para mandar os dados à um endereço de site (no caso localhost8087)
 ![image](https://user-images.githubusercontent.com/73084673/142276812-3e523fee-f39c-48ab-ad3b-2b4ba3a48a71.png)
+
+
+### Front-End
+
+Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão entre o back-end e o front-end, pegando as informações necessárias.
