@@ -24,3 +24,4 @@ E por fim, criamos o application.kt para mandar os dados à um endereço de site
 ### Front-End
 
 Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão entre o back-end e o front-end, pegando as informações necessárias.
+![image](https://user-images.githubusercontent.com/73084673/142279626-c0b866d2-519c-4b96-9367-be94ea1c0a9a.png)
