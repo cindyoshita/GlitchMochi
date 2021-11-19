@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:glitch_mochi/home_page.dart';
 import 'package:glitch_mochi/network_helper.dart';
 import 'package:glitch_mochi/requisitions.dart';
+import 'package:glitch_mochi/timer.dart';
 
 Controller controller = new Controller();
 
@@ -35,8 +36,11 @@ class PostRecommendationBase extends StatefulWidget {
 class _PostRecommendationBaseState extends State<PostRecommendationBase> {
   @override
   void initState() {
+    route = '/home';
     super.initState();
     localPosts();
+  
+
   }
 
   @override

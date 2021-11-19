@@ -72,7 +72,7 @@ void localPosts() async {
 // Inicio setState
 void setState(postGameData, imageGameData, commentGameData, postMangaData, imageMangaData, commentMangaData) async {
   print("entrou setstate");
-  if (postGameData != null && imageGameData != null) {
+  if (postGameData != null && imageGameData != null && imageMangaData != null && postMangaData != null) {
     // Atributos postGameData
     userID_game = await postGameData['userID'].toString();
     score_game = await postGameData['score'].toString();

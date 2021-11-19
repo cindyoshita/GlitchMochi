@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8a33943-f3f8-40ee-a977-253058deba77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/com/glitchmochi/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/MangaRecommendationDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GlitchMochi/src/main/kotlin/dao/MangaRecommendationDAO.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/app_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/app_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/requisitions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/TestesGlitchMochiFlutter/glitch_mochi/lib/requisitions.dart" afterDir="false" />

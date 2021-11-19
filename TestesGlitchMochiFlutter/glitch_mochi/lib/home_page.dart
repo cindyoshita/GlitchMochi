@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glitch_mochi/game_post_recommendation_page.dart';
 import 'package:glitch_mochi/requisitions.dart';
+import 'package:glitch_mochi/splash_screen.dart';
 
+var route = '/home';
 var sameTypePublication = 2;
 
 class HomePage extends StatefulWidget {
@@ -51,9 +53,10 @@ class _PostsState extends State<Posts> {
                   GestureDetector(
                     onTap: () async {
                       sameTypePublication = 1;
-
+                      route = '/gamerecommendation';
                       await Navigator.of(context)
-                          .pushNamed('/gamerecommendation');
+                          .pushNamed('/splashscreen');
+                        
                     },
                     child: Image.network(
                         "https://img.youtube.com/vi/uL8pgZ4vsfY/maxresdefault.jpg"),
@@ -73,8 +76,9 @@ class _PostsState extends State<Posts> {
                   GestureDetector(
                     onTap: () async {
                       sameTypePublication = 2;
+                      route = '/gamerecommendation';
                       await Navigator.of(context)
-                          .pushNamed('/gamerecommendation');
+                          .pushNamed('/splashscreen');
                     },
                     child: Image.network(
                         "https://www.animeunited.com.br/oomtumtu/2021/06/86_-EIGHTY-SIX-.png"),
@@ -94,8 +98,9 @@ class _PostsState extends State<Posts> {
                    GestureDetector(
                     onTap: () async {
                       sameTypePublication = 1;
+                      route = '/mangarecommendation';
                       await Navigator.of(context)
-                          .pushNamed('/mangarecommendation');
+                          .pushNamed('/splashscreen');
                     },
                     child: Image.network(
                         "https://ptanime.com/wp-content/uploads/2018/02/Merc-Storia-RPG-fantasy-smartphone-game-anime-anuncio-v1.jpg"),
@@ -115,8 +120,9 @@ class _PostsState extends State<Posts> {
                    GestureDetector(
                     onTap: () async {
                       sameTypePublication = 2;
+                      route = '/mangarecommendation';
                       await Navigator.of(context)
-                          .pushNamed('/mangarecommendation');
+                          .pushNamed('/splashscreen');
                     },
                     child: Image.network(
                         "https://sucodemanga.com.br/wp-content/uploads/2021/09/shadows-house-thumb-2.png"),
