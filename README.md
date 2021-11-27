@@ -4,6 +4,10 @@
 
 O projeto GlitchMochi tem como objetivo a criação de um site mobile first para recomendações de games e mangás, no qual será dividido em: página principal (home page), recomendação de jogo (game recommendation) e recomendação de mangá (manga recommendation).
 
+### Documentação da API
+
+https://documenter.getpostman.com/view/18542768/UVJbJJ4z
+
 ### DataBase
 
 Em nosso banco de dados, foi criado as tabelas que serão utilizados no projeto, resultando no diagrama final
