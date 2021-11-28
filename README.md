@@ -27,13 +27,13 @@ E por fim, criamos o application.kt para mandar os dados à um endereço de site
 
 ### Front-End
 
-Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão entre o back-end e o front-end, pegando as informações necessárias.
+Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão entre o back-end e o front-end, pegando as informações necessárias. Como essa conexão requer tempo, criou-se uma tela de loading.
 
-![image](https://user-images.githubusercontent.com/73084673/142279626-c0b866d2-519c-4b96-9367-be94ea1c0a9a.png)
+![image](https://user-images.githubusercontent.com/79462846/143726041-8eaac05a-83fa-4e6a-aa0a-9b190939715b.png)
 
 Na classe main estamos apenas referenciando o appwidget, que por sua vez está definindo o site.
 
-![image](https://user-images.githubusercontent.com/73084673/142279927-34facb2c-7ea4-4b51-8cfa-4934cc8251cf.png)
+![image](https://user-images.githubusercontent.com/79462846/143726049-44ba02eb-9ce7-4b97-b757-cbfc530962d6.png)
 
 #### Mockups
 > ##### Mockup do Homepage
@@ -43,7 +43,7 @@ Na classe main estamos apenas referenciando o appwidget, que por sua vez está d
 
 
 
-Assim foram definido os 3 tipos de página:
+Assim foram definido os 4 tipos de página:
 
 #### HomePage
 > ![image](https://user-images.githubusercontent.com/73084673/142280580-ee0f9f87-9e05-4766-aa4b-5408cba7ba24.png)
@@ -54,6 +54,8 @@ Assim foram definido os 3 tipos de página:
 #### GameRecommendation
 > ![image](https://user-images.githubusercontent.com/73084673/142283131-c2575454-8f55-4a41-ad60-fcb6bccffb24.png)
 
+#### SplashScreen
+> ![image](https://user-images.githubusercontent.com/79462846/143726269-edd21501-803b-434e-bbd4-910444c7a68c.png)
 ## Como rodar?
 
 Para que o site/aplicação consiga ser simulado, é necessário rodar o application.kt do BackEnd com a máquina virtual do mariaDB, ligada, para que seja possível acessar os dados do banco de dados. A seguir, deve-se rodar o código em dart do flutter para que a página da web (no caso o chrome) seja iniciada, mostrando a aplicação funcional.
