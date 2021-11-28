@@ -27,7 +27,7 @@ E por fim, criamos o application.kt para mandar os dados à um endereço de site
 
 ### Front-End
 
-Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão entre o back-end e o front-end, pegando as informações necessárias. Como essa conexão requer tempo, criou-se uma tela de loading.
+Para o Front-End, criou-se a classe networkhelper para ajudar a fazer a conexão entre o back-end e o front-end, pegando as informações necessárias. Como essa conexão requer tempo, criou-se uma tela de loading (splash screen).
 
 ![image](https://user-images.githubusercontent.com/79462846/143726041-8eaac05a-83fa-4e6a-aa0a-9b190939715b.png)
 
